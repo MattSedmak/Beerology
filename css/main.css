@@ -15,13 +15,13 @@
   position: relative;
   right: 20px;
   font-size: 2em;
-  color: #2a2e34; }
+  color: #000; }
 
 .menu-btn {
   position: relative;
   left: 20px;
   font-size: 2.5em;
-  color: #2a2e34;
+  color: #000;
   opacity: 1;
   z-index: 999;
   transition: all 0.2s ease; }
@@ -46,7 +46,7 @@
   top: 80px;
   width: 100%;
   height: 150px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.4);
   z-index: 799;
   opacity: 0;
   transition: all 0.2s ease; }
@@ -75,17 +75,17 @@ li {
 
 /*link style*/
 a:link {
-  color: #ffff;
+  color: #000;
   /*teal*/
   text-decoration: none;
   transition: all 0.1s ease; }
 
 a:visited {
-  color: #ffff;
+  color: #000;
   /*teal*/ }
 
 a:hover {
-  color: #fafaf9;
+  color: #000;
   /*pale yello*/
   font-size: 1.05em; }
 
@@ -106,13 +106,39 @@ a:hover {
   background-image: url("../Pictures/beerology-startsida.jpg");
   background-position: center top;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 100vh; }
   .headerContent .headerText {
-    background: rgba(255, 255, 255, 0.1);
-    width: 100vw;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    color: #ffff;
+    font-size: 35px;
+    text-align: center; }
+    .headerContent .headerText h1 {
+      padding-bottom: 10px; }
+    .headerContent .headerText p {
+      padding-bottom: 200px; }
+  .headerContent div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 100px; }
+    .headerContent div .button {
+      background-color: #fed053;
+      border: 1px solid #f5b301;
+      color: black;
+      border-radius: 20px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 4px 2px;
+      cursor: pointer; }
