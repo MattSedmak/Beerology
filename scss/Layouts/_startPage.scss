@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.headerContent {
+  background-image: url("../Pictures/beerology-startsida.jpg");
+  background-position: center top;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  .headerText {
+    background: rgba(255, 255, 255, 0.1);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
