@@ -13,14 +13,14 @@
   position: relative;
   right: 20px;
   font-size: 2em;
-  color: #2a2e34;
+  color: #000;
 }
 
 .menu-btn {
   position: relative;
   left: 20px;
   font-size: 2.5em;
-  color: #2a2e34;
+  color: #000;
   opacity: 1;
   z-index: 999;
   transition: all 0.2s ease;
@@ -46,7 +46,7 @@
   top: 80px;
   width: 100%;
   height: 150px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.4);
   z-index: 799;
   opacity: 0;
   transition: all 0.2s ease;
@@ -81,17 +81,17 @@ li {
 /*link style*/
 
 a:link {
-  color: #ffff; /*teal*/
+  color: #000; /*teal*/
   text-decoration: none;
   transition: all 0.1s ease;
 }
 
 a:visited {
-  color: #ffff; /*teal*/
+  color: #000; /*teal*/
 }
 
 a:hover {
-  color: #fafaf9; /*pale yello*/
+  color: #000; /*pale yello*/
   font-size: 1.05em;
 }
 
