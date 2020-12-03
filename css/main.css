@@ -142,3 +142,45 @@ a:hover {
       font-size: 18px;
       margin: 4px 2px;
       cursor: pointer; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.orderPayedHeader {
+  background-image: url("../Pictures/beerology-order.jpeg");
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  height: 100vh; }
+  .orderPayedHeader .orderPayedText {
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    font-size: 45px;
+    text-align: center;
+    line-height: 100px; }
+  .orderPayedHeader div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 100px; }
+    .orderPayedHeader div .button {
+      background-color: #fed053;
+      border: 1px solid #f5b301;
+      color: black;
+      border-radius: 20px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 4px 2px;
+      cursor: pointer; }
