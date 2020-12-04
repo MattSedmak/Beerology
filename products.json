@@ -1,0 +1,30 @@
+{
+  "status": "success",
+
+  "items": [
+    {
+      "id": 1,
+      "name": "Obernale",
+      "price": 25,
+      "image": "./Pictures/obernale.png"
+    },
+    {
+      "id": 2,
+      "name": "Peroni",
+      "price": 20,
+      "image": "./Pictures/peroni.png"
+    },
+    {
+      "id": 3,
+      "name": "Punk IPA",
+      "price": 20,
+      "image": "./Pictures/punkIPA.png"
+    },
+    {
+      "id": 4,
+      "name": "Sour Monkey",
+      "price": 20,
+      "image": "./Pictures/sourMonkey.png"
+    }
+  ]
+}
