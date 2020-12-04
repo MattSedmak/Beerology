@@ -25,29 +25,34 @@
     }
 }
 
-
-
-.allBeersContainer {
-    background-color: rgb(42, 154, 168);
+#allBeersContainer {
+    // background-color: rgb(42, 154, 168);
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     
 
     .individualBeerContainer {
-        background-color: rgb(231, 231, 231);
-        width: 50%;
+        
+        width: 150px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 10px;
-        
-        .individualBeerImage {
-            background-color: tomato;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
+        margin: 10px;
     }
 }
+
+#addToCartBtn {
+    margin-top: 5px;
+    padding: 3px 25px;
+    background-color: #f7d36e;
+    border: 1px solid #f5b301;
+    color: black;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    }
