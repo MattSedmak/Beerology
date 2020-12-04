@@ -8,7 +8,7 @@
 
 .allBeersHeader {
   background-image: url("/Pictures/rhett-wesley-beerBottles-unsplash.jpg");
-  background-position: center top;
+  background-position: center center;
   background-size: cover;
   width: 100%;
   height: 40vh; }
@@ -24,27 +24,38 @@
     font-size: 45px;
     text-transform: uppercase; }
 
-.allBeersContainer {
-  background-color: #2a9aa8;
+#allBeersContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap; }
-  .allBeersContainer .individualBeerContainer {
-    background-color: #e7e7e7;
-    width: 50%;
+  #allBeersContainer .individualBeerContainer {
+    flex-grow: 1;
+    flex: 100%;
+    max-width: 33%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px; }
-    .allBeersContainer .individualBeerContainer .individualBeerImage {
-      background-color: tomato;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
+    margin: 10px; }
+    #allBeersContainer .individualBeerContainer img {
+      width: 50%; }
+
+#addToCartBtn {
+  margin-top: 5px;
+  padding: 3px 25px;
+  background-color: #f7d36e;
+  border: 1px solid #f5b301;
+  color: black;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer; }
 
 .footerSection {
   background-color: #fed053;
+  margin-top: auto;
   width: 100%;
   height: 80px;
   display: flex;
