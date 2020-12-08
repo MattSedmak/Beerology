@@ -1,8 +1,98 @@
 @charset "UTF-8";
 /******* Importera alla scss filer.********** I
 ******** Ingen Kod ska skrivas här.**********/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.allBeersHeader {
+  background-image: url("../Pictures/rhett-wesley-beerBottles-unsplash.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 40vh; }
+  .allBeersHeader .allBeersText {
+    background: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    font-size: 45px;
+    text-transform: uppercase; }
+
+#allBeersContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  #allBeersContainer .individualBeerContainer {
+    flex-grow: 1;
+    flex: 100%;
+    max-width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
+    margin: 10px; }
+    #allBeersContainer .individualBeerContainer img {
+      width: 50%; }
+
+#addToCartBtn {
+  margin-top: 5px;
+  padding: 3px 25px;
+  background-color: #f7d36e;
+  border: 1px solid #f5b301;
+  color: black;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer; }
+
+.shoppingCart .fa-shopping-cart {
+  font-size: 20px; }
+  .shoppingCart .fa-shopping-cart:hover {
+    cursor: pointer; }
+
+.shoppingCart span {
+  font-size: 16px;
+  margin-left: 5px; }
+
+#cart {
+  border: 2px solid #111;
+  background-color: #fff;
+  position: absolute;
+  min-height: 5rem;
+  top: 70px;
+  right: 30px;
+  width: 400px;
+  display: none;
+  z-index: 999;
+  flex-direction: column; }
+
+#cart img {
+  width: 100px; }
+
+.cartCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.totalprice {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  height: 50px; }
+
 .footerSection {
   background-color: #fed053;
+  margin-top: auto;
   width: 100%;
   height: 80px;
   display: flex;
@@ -133,6 +223,65 @@ a:hover {
 .showPanel {
   opacity: 1; }
 
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px; }
+  .product img {
+    width: 60%;
+    height: 60%; }
+
+hr {
+  border-top: 1px solid #8c8b8b;
+  width: 80%;
+  margin: auto; }
+
+.addToCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 10%;
+  margin-top: 20px; }
+  .addToCart input {
+    width: 10%;
+    margin: 10px; }
+  .addToCart button {
+    background-color: #fed053;
+    border: 1px solid #f5b301;
+    color: black;
+    border-radius: 20px;
+    padding: 5px;
+    width: 90%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 20px;
+    cursor: pointer; }
+
+.info {
+  margin: 20px;
+  display: flex;
+  justify-content: center; }
+  .info table {
+    border-collapse: collapse;
+    width: 100%; }
+    .info table td,
+    .info table th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px; }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -206,7 +355,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 100px; }
+    bottom: 130px; }
     .orderPayedHeader div .button {
       background-color: #fed053;
       border: 1px solid #f5b301;

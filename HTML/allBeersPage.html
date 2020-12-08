@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank you - Beerology</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beerology - All Beers!</title>
   <!-- Custom css -->
   <link rel="stylesheet" href="../css/main.css" />
   <!-- jQuery -->
@@ -13,9 +13,11 @@
   <!-- JS -->
   <script src="https://kit.fontawesome.com/b22cc2033a.js" crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/products.js"></script>
 </head>
 
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="menu-btn">
       <i class="fas fa-bars"></i>
@@ -40,22 +42,29 @@
     <div class="logo">
       <a href="../index.html"><img src="../Pictures/beerology-logo(2).png" alt="Beerology Logo" width="120" /></a>
     </div>
-    <div class="shoppingCart"><i class="fas fa-shopping-cart"></i></div>
+    <div class="shoppingCart"><i class="fas fa-shopping-cart"></i><span id="cartCounter">0</span></div>
   </nav>
 
-  <section class="orderPayedHeader">
-    <div class="orderPayedText">
-      <h3>THANK YOU FOR YOUR ORDER!</h3>
-    </div>
-    <div>
-      <a href="../index.html" class="button">BACK TO START</a>
+  <!-- Shopping cart -->
+  <div id="cart"></div>
+
+
+  <!-- Hero/header image-->
+  <section class="allBeersHeader">
+    <div class="allBeersText">
+      <h3>All Beers</h3>
     </div>
   </section>
-  <!-- Footer -->
 
+  <!-- Beer selection -->
+  <main id="allBeersContainer">
+
+  </main>
+
+  <!-- Footer -->
   <footer class="footerSection">
     <div class="footerLogo">
-      <a href="../index.html"><img
+      <a href="index.html"><img
           src="../Pictures/beerology-logo(2) (1)0b189b2e17bd1f8b11e38c4488e93a6c466c66a34e0460a43c4d8815c8afd665.png"></img></a>
     </div>
     <div class=" socialIcons">
