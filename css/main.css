@@ -53,6 +53,43 @@
   text-align: center;
   cursor: pointer; }
 
+.shoppingCart .fa-shopping-cart {
+  font-size: 20px; }
+  .shoppingCart .fa-shopping-cart:hover {
+    cursor: pointer; }
+
+.shoppingCart span {
+  font-size: 16px;
+  margin-left: 5px; }
+
+#cart {
+  border: 2px solid #111;
+  background-color: #fff;
+  position: absolute;
+  min-height: 5rem;
+  top: 70px;
+  right: 30px;
+  width: 400px;
+  display: none;
+  z-index: 999;
+  flex-direction: column; }
+
+#cart img {
+  width: 100px; }
+
+.cartCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.totalprice {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  height: 50px; }
+
 .footerSection {
   background-color: #fed053;
   margin-top: auto;
