@@ -1,17 +1,14 @@
 $(function () {
-  $(".menu-btn").click(function () {
-    $(".menu-btn").toggleClass("disBtn");
-
-    $(".cross-btn").toggleClass("enCross");
-
-    $(".menu-panel").toggleClass("showPanel");
+  // Hambuger toggle
+  $(".menu-btn").on("click", function () {
+    $(".menu-panel").toggle("fade").toggleClass("expand");
   });
 
   // Shopping cart toggle
   $(".fa-shopping-cart").on("click", function () {
-    $("#cart").toggle();
-    console.log("cart clicked");
+    $("#cart").toggle("drop");
   });
+  $(".headerText").hide().fadeIn(2000);
   // Loopar genom cart on load
   $.each(cart, (i, carItm) => {
     renderCart();

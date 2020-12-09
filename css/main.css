@@ -53,15 +53,6 @@
   text-align: center;
   cursor: pointer; }
 
-.shoppingCart .fa-shopping-cart {
-  font-size: 20px; }
-  .shoppingCart .fa-shopping-cart:hover {
-    cursor: pointer; }
-
-.shoppingCart span {
-  font-size: 16px;
-  margin-left: 5px; }
-
 #cart {
   border: 2px solid #111;
   background-color: #fff;
@@ -119,7 +110,8 @@
     line-height: 1.2em; }
     .footerSection .contactFooter a {
       color: #000;
-      font-size: 16px; }
+      font-size: 16px;
+      text-decoration: none; }
       .footerSection .contactFooter a:hover {
         cursor: pointer;
         opacity: 0.7; }
@@ -133,95 +125,58 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
-
-/*menu button*/
-.shoppingCart {
-  position: relative;
-  right: 20px;
-  font-size: 2em;
-  color: #000; }
-
-.menu-btn {
-  position: relative;
-  left: 20px;
-  font-size: 2.5em;
-  color: #000;
-  opacity: 1;
-  z-index: 999;
-  transition: all 0.2s ease; }
-
-.menu-btn:hover {
-  font-size: 2.75em;
-  cursor: pointer; }
-
-/*cross button*/
-.cross-btn {
-  position: absolute;
-  left: 20px;
-  font-size: 2.75em;
-  color: #fafaf9;
-  /*pale yello*/
-  opacity: 0;
-  z-index: 899;
-  transition: all 0.2s ease; }
+  align-items: center;
+  /*menu button*/
+  /*menu button*/ }
+  .navbar .shoppingCart {
+    position: relative;
+    right: 20px;
+    color: #000; }
+  .navbar .menu-btn {
+    position: relative;
+    left: 20px;
+    font-size: 1.5em;
+    color: #000; }
+    .navbar .menu-btn:hover {
+      cursor: pointer; }
+  .navbar .shoppingCart {
+    position: relative;
+    right: 20px;
+    color: #000; }
+    .navbar .shoppingCart .fa-shopping-cart {
+      font-size: 1.2em; }
+      .navbar .shoppingCart .fa-shopping-cart:hover {
+        cursor: pointer; }
+    .navbar .shoppingCart span {
+      font-size: 1em;
+      margin-left: 5px; }
 
 .menu-panel {
   position: absolute;
   top: 80px;
   width: 100%;
-  height: 150px;
-  background-color: rgba(255, 255, 255, 0.4);
-  z-index: 799;
-  opacity: 0;
-  transition: all 0.2s ease; }
-
-ul {
-  display: block;
-  margin: 0;
-  padding: 0;
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 99;
+  transition: all 0.2s ease;
   list-style-type: none;
-  text-align: center;
-  /*put ul at the center*/
-  position: absolute;
-  height: 100%;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%); }
-
-/* li contains p, provide fixed height for each item, prevent fluctuating padding add/disable animation*/
-li {
-  height: 38%; }
-  li p {
+  display: none; }
+  .menu-panel li {
     margin: 0;
-    font-family: "century gothic", sans serif;
-    font-size: 2em;
-    padding-bottom: 50%; }
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px; }
+    .menu-panel li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600; }
+      .menu-panel li a:hover, .menu-panel li a:active {
+        color: #000; }
 
-/*link style*/
-a:link {
-  color: #000;
-  /*teal*/
-  text-decoration: none;
-  transition: all 0.1s ease; }
-
-a:visited {
-  color: #000;
-  /*teal*/ }
-
-a:hover {
-  color: #000;
-  /*pale yello*/
-  font-size: 1.05em; }
-
-.disBtn {
-  opacity: 0; }
-
-.enCross {
-  opacity: 1; }
-
-.showPanel {
-  opacity: 1; }
+.expand {
+  display: block; }
 
 #product {
   display: flex;
@@ -298,11 +253,12 @@ hr {
 
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Courier New", Courier, monospace; }
 
 .headerContent {
   background-image: url("../Pictures/beerology-startsida.jpg");
-  background-position: center top;
+  background-position: center center;
   background-size: cover;
   width: 100%;
   height: 100vh; }
@@ -322,16 +278,17 @@ hr {
       padding-bottom: 10px; }
     .headerContent .headerText p {
       padding-bottom: 200px; }
-  .headerContent div {
+  .headerContent .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 100px; }
-    .headerContent div .button {
+    bottom: 350px; }
+    .headerContent .btn-container .button {
       background-color: #fed053;
       border: 1px solid #f5b301;
       color: black;
+      font-weight: 600;
       border-radius: 20px;
       padding: 15px 32px;
       text-align: center;
