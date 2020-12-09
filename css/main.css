@@ -90,6 +90,49 @@
   width: 400px;
   height: 50px; }
 
+.checkoutPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red; }
+  .checkoutPage .cartContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9b9b9b; }
+    .checkoutPage .cartContainer .productContainer {
+      display: flex;
+      flex-direction: column; }
+      .checkoutPage .cartContainer .productContainer .productCard {
+        background: #ff8936;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        .checkoutPage .cartContainer .productContainer .productCard .productCardImg {
+          width: 50%; }
+          .checkoutPage .cartContainer .productContainer .productCard .productCardImg img {
+            width: 100%;
+            height: 100%; }
+    .checkoutPage .cartContainer .cartTotal {
+      width: 100%;
+      display: flex;
+      justify-content: space-between; }
+  .checkoutPage .formContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #b6b6b6; }
+    .checkoutPage .formContainer form {
+      width: 75%;
+      border: 1px solid blue; }
+
 .footerSection {
   background-color: #fed053;
   margin-top: auto;
