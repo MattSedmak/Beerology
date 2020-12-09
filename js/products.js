@@ -48,7 +48,7 @@ let paleAle = new Beers(
 let sour = new Beers(
   4,
   "../Pictures/sourMonkey.png",
-  "Sour Monkey",
+  "SourMonkey",
   "Sour Beer",
   "33cl",
   "3,5%",
