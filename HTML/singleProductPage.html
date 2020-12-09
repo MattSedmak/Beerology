@@ -10,6 +10,7 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
+  <script src="/jquery-ui.js"></script>
   <!-- JS -->
   <script src="https://kit.fontawesome.com/b22cc2033a.js" crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>
@@ -17,33 +18,36 @@
   <script src="../js/individualProduct.js"></script>
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="menu-btn">
       <i class="fas fa-bars"></i>
     </div>
-    <div class="cross-btn">
-      <i class="fas fa-times"></i>
-    </div>
-    <div class="menu-panel">
-      <ul>
-        <li>
-          <a href="index.html">
-            <p class="nav-item">HOME</p>
-          </a>
-        </li>
-        <li>
-          <a href="../HTML/allBeersPage.html">
-            <p class="nav-item">ALL BEERS</p>
-          </a>
-        </li>
-      </ul>
-    </div>
+
+
+    <ul class="menu-panel">
+      <li>
+        <a href="../index.html" class="nav-item">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="../HTML/allBeersPage.html" class="nav-item">
+          All Beers
+        </a>
+      </li>
+    </ul>
+
     <div class="logo">
-      <a href="../index.html"><img src="../Pictures/beerology-logo(2).png" alt="Beerology Logo" width="120" /></a>
+      <a href="../index.html"><img
+          src="../Pictures/beerology-logo(2) (1)0b189b2e17bd1f8b11e38c4488e93a6c466c66a34e0460a43c4d8815c8afd665.png"
+          alt="Beerology Logo" width="120" /></a>
     </div>
-    <div class="shoppingCart"><i class="fas fa-shopping-cart"></i></div>
+    <div class="shoppingCart" id="cartIcon"><i class="fas fa-shopping-cart"></i><span id="cartCounter"> 0</span></div>
   </nav>
 
+  <!-- Shopping cart -->
+  <div id="cart"></div>
   <div id="product"></div>
   <hr>
   <div id="addToCart"></div>
@@ -55,6 +59,7 @@
   <div id="about"></div>
 
   
+
   <!-- Footer -->
   <footer class="footerSection">
     <div class="footerLogo">

@@ -10,6 +10,7 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
+  <script src="jquery-ui.js"></script>
   <!-- JS -->
   <script src="https://kit.fontawesome.com/b22cc2033a.js" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
@@ -21,23 +22,22 @@
     <div class="menu-btn">
       <i class="fas fa-bars"></i>
     </div>
-    <div class="cross-btn">
-      <i class="fas fa-times"></i>
-    </div>
-    <div class="menu-panel">
-      <ul>
-        <li>
-          <a href="index.html">
-            <p class="nav-item">HOME</p>
-          </a>
-        </li>
-        <li>
-          <a href="./HTML/allBeersPage.html">
-            <p class="nav-item">ALL BEERS</p>
-          </a>
-        </li>
-      </ul>
-    </div>
+
+
+    <ul class="menu-panel">
+      <li>
+        <a href="index.html" class="nav-item">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="./HTML/allBeersPage.html" class="nav-item">
+          All Beers
+        </a>
+      </li>
+    </ul>
+
+
     <div class="logo">
       <a href="index.html"><img
           src="Pictures/beerology-logo(2) (1)0b189b2e17bd1f8b11e38c4488e93a6c466c66a34e0460a43c4d8815c8afd665.png"
@@ -51,10 +51,11 @@
   <section class="headerContent">
     <div class="headerText">
       <h1>BEEROLOGY</h1>
-      <p>MAKING DELICIOUS BEER SINCE 89</p>
+      <p>SELLING DELICIOUS BEER SINCE '89</p>
     </div>
-    <div>
-      <a href="./HTML/allBeersPage.html" class="button">ALL BEERS</a>
+
+    <div class="btn-container">
+      <a href="./HTML/allBeersPage.html" class="button" class="button">ALL BEERS</a>
     </div>
   </section>
   <!-- Footer -->
