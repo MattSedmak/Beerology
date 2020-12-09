@@ -55,9 +55,28 @@
                     <p>Name</p>
                     <input type="text">
                     <p>Price</p>
-                    <span>Delete Icon</span>
+                    <span><i class="fas fa-trash"></i></span>
                 </div>
+                <div class="productCard">
+                  <div class="productCardImg">
+                      <img src="../Pictures/bottle.png" alt="Bottle">
+                  </div>
+                  <p>Name</p>
+                  <input type="text">
+                  <p>Price</p>
+                  <span><i class="fas fa-trash"></i></span>
+              </div>
+              <div class="productCard">
+                <div class="productCardImg">
+                    <img src="../Pictures/bottle.png" alt="Bottle">
+                </div>
+                <p>Name</p>
+                <input type="text">
+                <p>Price</p>
+                <span><i class="fas fa-trash"></i></span>
             </div>
+            </div>
+            <hr>
             <!-- Total sum and amount-->
             <div class="cartTotal">
                 <p>Total:</p>
@@ -65,14 +84,16 @@
                 <p>SUM</p>
             </div>
         </section>
+        <!-- Customer input-->
         <section class="formContainer">
             <form>
-                <label for="">Firstname:</label>
-                <input type="text">
-                <label for="">Lastname:</label>
-                <input type="text">
-                <label for="">Cardnumber:</label>
-                <input type="text">
+                <label for="fName">Firstname:</label>
+                <input type="text" id="fName">
+                <label for="lName">Lastname:</label>
+                <input type="text" id="lName">
+                <label for="cardnumber">Cardnumber:</label>
+                <input type="text" id="cardnumber">
+                <button type="button">Pay</button>
             </form>
         </section>
     </main>
