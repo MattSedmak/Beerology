@@ -195,17 +195,17 @@ hr {
   width: 80%;
   margin: auto; }
 
-#addToCart {
+#addToCartDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin-left: 10%;
   margin-top: 20px; }
-  #addToCart div input {
+  #addToCartDiv div input {
     width: 15%;
     margin: 10px; }
-  #addToCart div .increaseAndDecrease {
+  #addToCartDiv div .increaseAndDecrease {
     background-color: #fed053;
     border: 1px solid #f5b301;
     color: black;
@@ -217,7 +217,7 @@ hr {
     font-size: 14px;
     cursor: pointer;
     margin-bottom: 20px; }
-  #addToCart .addToCartButton {
+  #addToCartDiv .addToCartButton {
     background-color: #fed053;
     border: 1px solid #f5b301;
     color: black;

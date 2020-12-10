@@ -71,9 +71,18 @@ function printBeer() {
     $("<img>")
       .attr("src", beer.image)
       .attr("alt", beer.name + " bottle")
+      .on("click", { b: beer }, function (e) {
+        saveToSS(e.data.b);
+        window.location.assign("../HTML/singleProductPage.html");
+      })
       .appendTo($container);
 
-    $("<h3>").html(beer.name).appendTo($container);
+    $("<h3>")
+      .html(beer.name)
+      //.on("click", function () {
+      //testar(e.data.b);
+      //})
+      .appendTo($container);
 
     $("<p>").html(beer.type).appendTo($container);
 
@@ -92,4 +101,8 @@ function printBeer() {
 
     $container.appendTo($("#allBeersContainer"));
   });
+}
+
+function saveToSS(theClickedProduct) {
+  sessionStorage.setItem("productItem", JSON.stringify(theClickedProduct));
 }
