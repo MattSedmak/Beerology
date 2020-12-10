@@ -32,7 +32,7 @@ let ipa = new Beers(
   "6,5%",
   "3/5",
   "One of the key players that helped kick-start the Craft Beer revolution, BrewDog are the original Punk Brewers, and this go-ahead attitude is never clearer than in Punk IPA, the original British Craft IPA. This sparkling bright gold IPA is bursting with light, bright malts, with fresh, crisp, melon, passionfruit citrus and pine hops, and a deliciously light body that together make this one hell of a drinkable IPA.",
-  2.3
+  2.5
 );
 let paleAle = new Beers(
   3,
@@ -54,7 +54,7 @@ let sour = new Beers(
   "3,5%",
   "4/5",
   "Sour Monkey puts a tastefully tart twist on our Golden Monkey's sweet, fruity essence. A sharp, citrus-laden tang makes this brew a Monkey all its own! This Sour Ale style beer is best paired with salads or peppery style cheeses such as Monterey / Pepper Jack and pungent style cheese such as Gorgonzola and Limburger.",
-  2.99
+  3
 );
 
 let allBeers = [lager, ipa, paleAle, sour];
