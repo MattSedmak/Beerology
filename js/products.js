@@ -32,7 +32,7 @@ let ipa = new Beers(
   "6,5%",
   "3/5",
   "One of the key players that helped kick-start the Craft Beer revolution, BrewDog are the original Punk Brewers, and this go-ahead attitude is never clearer than in Punk IPA, the original British Craft IPA. This sparkling bright gold IPA is bursting with light, bright malts, with fresh, crisp, melon, passionfruit citrus and pine hops, and a deliciously light body that together make this one hell of a drinkable IPA.",
-  2.3
+  2.5
 );
 let paleAle = new Beers(
   3,
@@ -48,13 +48,13 @@ let paleAle = new Beers(
 let sour = new Beers(
   4,
   "../Pictures/sourMonkey.png",
-  "Sour Monkey",
+  "SourMonkey",
   "Sour Beer",
   "33cl",
   "3,5%",
   "4/5",
   "Sour Monkey puts a tastefully tart twist on our Golden Monkey's sweet, fruity essence. A sharp, citrus-laden tang makes this brew a Monkey all its own! This Sour Ale style beer is best paired with salads or peppery style cheeses such as Monterey / Pepper Jack and pungent style cheese such as Gorgonzola and Limburger.",
-  2.99
+  3
 );
 
 let allBeers = [lager, ipa, paleAle, sour];
@@ -71,9 +71,18 @@ function printBeer() {
     $("<img>")
       .attr("src", beer.image)
       .attr("alt", beer.name + " bottle")
+      .on("click", { b: beer }, function (e) {
+        saveToSS(e.data.b);
+        window.location.assign("../HTML/singleProductPage.html");
+      })
       .appendTo($container);
 
-    $("<h3>").html(beer.name).appendTo($container);
+    $("<h3>")
+      .html(beer.name)
+      //.on("click", function () {
+      //testar(e.data.b);
+      //})
+      .appendTo($container);
 
     $("<p>").html(beer.type).appendTo($container);
 
@@ -92,4 +101,8 @@ function printBeer() {
 
     $container.appendTo($("#allBeersContainer"));
   });
+}
+
+function saveToSS(theClickedProduct) {
+  sessionStorage.setItem("productItem", JSON.stringify(theClickedProduct));
 }
