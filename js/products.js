@@ -1,7 +1,19 @@
 class Beers {
-  constructor(id, image, name, type, size, alc, rating, description, price) {
+  constructor(
+    id,
+    image,
+    imageForStart,
+    name,
+    type,
+    size,
+    alc,
+    rating,
+    description,
+    price
+  ) {
     this.id = id;
     this.image = image;
+    this.imageForStart = imageForStart;
     this.name = name;
     this.type = type;
     this.size = size;
@@ -15,6 +27,7 @@ class Beers {
 let lager = new Beers(
   1,
   "../Pictures/peroni.png",
+  "Pictures/peroni.png",
   "Peroni",
   "Lager",
   "33cl",
@@ -26,6 +39,7 @@ let lager = new Beers(
 let ipa = new Beers(
   2,
   "../Pictures/punkIPA.png",
+  "Pictures/punkIPA.png",
   "Brewdog",
   "Punk IPA",
   "33cl",
@@ -37,6 +51,7 @@ let ipa = new Beers(
 let paleAle = new Beers(
   3,
   "../Pictures/oberonale.png",
+  "Pictures/oberonale.png",
   "Camden",
   "Pale Ale",
   "33cl",
@@ -48,6 +63,7 @@ let paleAle = new Beers(
 let sour = new Beers(
   4,
   "../Pictures/sourMonkey.png",
+  "Pictures/sourMonkey.png",
   "SourMonkey",
   "Sour Beer",
   "33cl",
@@ -60,6 +76,7 @@ let sour = new Beers(
 let wheat = new Beers(
   5,
   "../Pictures/swedishsummer.png",
+  "Pictures/swedishsummer.png",
   "Swedish Summer",
   "Wheat",
   "33cl",
@@ -72,6 +89,7 @@ let wheat = new Beers(
 let porter = new Beers(
   6,
   "../Pictures/carnegie.png",
+  "Pictures/carnegie.png",
   "Carnegie Porter",
   "Porter",
   "33cl",
@@ -84,6 +102,7 @@ let porter = new Beers(
 let fruitBeer = new Beers(
   7,
   "../Pictures/muremyrtille.png",
+  "Pictures/muremyrtille.png",
   "Mure Myrtille",
   "Fruit Beer",
   "33cl",
@@ -96,6 +115,7 @@ let fruitBeer = new Beers(
 let stout = new Beers(
   8,
   "../Pictures/aldaris.png",
+  "Pictures/aldaris.png",
   "Aldaris Porteris",
   "Stout",
   "50cl",
@@ -108,6 +128,7 @@ let stout = new Beers(
 let darkLager = new Beers(
   9,
   "../Pictures/panonska.png",
+  "Pictures/panonska.png",
   "Panonska",
   "Dark lager",
   "33cl",
@@ -120,6 +141,7 @@ let darkLager = new Beers(
 let seasonalBrew = new Beers(
   10,
   "../Pictures/julbrygd.png",
+  "Pictures/julbrygd.png",
   "Falcon Julbrygd",
   "Seasonal Brew",
   "50cl",

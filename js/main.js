@@ -45,7 +45,11 @@ function renderCart() {
     $cartCard = $("<div>");
     $cartCard.addClass("cartCard");
 
-    $("<img>").attr("src", currentProduct.image).appendTo($cartCard);
+    if (window.location.href.indexOf("index.html") > -1) {
+      $("<img>").attr("src", currentProduct.imageForStart).appendTo($cartCard);
+    } else {
+      $("<img>").attr("src", currentProduct.image).appendTo($cartCard);
+    }
 
     $("<span>")
       .html(currentProduct.name + " ")
