@@ -57,7 +57,91 @@ let sour = new Beers(
   3
 );
 
-let allBeers = [lager, ipa, paleAle, sour];
+let wheat = new Beers(
+  5,
+  "../Pictures/swedishsummer.png",
+  "Swedish Summer",
+  "Wheat",
+  "33cl",
+  "5,8%",
+  "4,2/5",
+  "Slightly spicy taste with hints of banana, light bread, mandarin and coriander seeds. Served at 8-10 degrees as a companion drink, or with tasty, preferably spicy dishes of fish and light meat",
+  3
+);
+
+let porter = new Beers(
+  6,
+  "../Pictures/carnegie.png",
+  "Carnegie Porter",
+  "Porter",
+  "33cl",
+  "5,5%",
+  "3.5/5",
+  "In 1836, it was taken over by David Carnegie. The Carnegie Porter has since then been the dominating porter in Sweden. This brew has a slightly roasted aroma with hint of brown sugar and coffee. The taste is round and complex with hints of chocolate and coffee and a slight bitterness in the aftertaste.",
+  3.5
+);
+
+let fruitBeer = new Beers(
+  7,
+  "../Pictures/muremyrtille.png",
+  "Mure Myrtille",
+  "Fruit Beer",
+  "33cl",
+  "4,5%",
+  "4.3/5",
+  "1664 Mûre Myrtille is a refreshing and fruity wheat beer. This beer offers a perfect balance between the fruity flavours of blackberry and blueberry and floral notes, along with subtle notes of malt. Ideal for all moments of conviviality.",
+  2
+);
+
+let stout = new Beers(
+  8,
+  "../Pictures/aldaris.png",
+  "Aldaris Porteris",
+  "Stout",
+  "50cl",
+  "6,8%",
+  "4/5",
+  "Mežpils Porter is a special variety of a traditional strong beer with a wonderful taste of caramel and a slight tone of wine, which may also come through in the aroma.",
+  3.5
+);
+
+let darkLager = new Beers(
+  9,
+  "../Pictures/panonska.png",
+  "Panonska",
+  "Dark lager",
+  "33cl",
+  "4,8%",
+  "3.9/5",
+  "We don’t like bitter people and it’s the same when it comes to our beer. This extra smooth Dark Lager may look like it has a bite, but its rich caramel taste is as soft-hearted as a good chocolate soufflé. We don’t know you or your friends but a few of these might be perfect for when you are out with them and feel like something a little tastier.",
+  3
+);
+
+let seasonalBrew = new Beers(
+  10,
+  "../Pictures/julbrygd.png",
+  "Falcon Julbrygd",
+  "Seasonal Brew",
+  "50cl",
+  "5,2%",
+  "4.8/5",
+  "A tasty strong brew with a soft and delicate sweetness that combines the full-bodied taste of roasted malt and the bitterness of aroma hops. Falcon Julöl (Christmass Beer) is Sweden's most popular Christmas beer, designed as a perfect compliment to all the traditional Swedish delicacies. It’s a full malt beer, brewed with a special blend of malts to give the right golden brown colour and full-bodied aroma.",
+  2.5
+);
+
+let allBeers = [
+  lager,
+  ipa,
+  paleAle,
+  sour,
+  wheat,
+  porter,
+  fruitBeer,
+  stout,
+  darkLager,
+  seasonalBrew,
+];
+
 $(function () {
   printBeer();
 });
@@ -67,7 +151,6 @@ function printBeer() {
     // console.log(beer);
     let $container = $("<div>");
     $container.addClass("individualBeerContainer");
-
     $("<img>")
       .attr("src", beer.image)
       .attr("alt", beer.name + " bottle")
@@ -76,20 +159,16 @@ function printBeer() {
         window.location.assign("../HTML/singleProductPage.html");
       })
       .appendTo($container);
-
     $("<h3>")
       .html(beer.name)
       //.on("click", function () {
       //testar(e.data.b);
       //})
       .appendTo($container);
-
     $("<p>").html(beer.type).appendTo($container);
-
     $("<p>")
       .html("$" + beer.price)
       .appendTo($container);
-
     $("<button>")
       .attr("type", "button")
       .attr("id", "addToCartBtn")
@@ -98,11 +177,9 @@ function printBeer() {
         addToCart(e.data.b);
       })
       .appendTo($container);
-
     $container.appendTo($("#allBeersContainer"));
   });
 }
-
 function saveToSS(theClickedProduct) {
   sessionStorage.setItem("productItem", JSON.stringify(theClickedProduct));
 }
