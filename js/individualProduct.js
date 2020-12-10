@@ -35,7 +35,8 @@ function addProductToCart(productItem) {
     .html("-")
     .addClass("increaseAndDecrease")
     .on("click", function () {
-      decreaseProducts(productItem);
+      // decreaseProducts(productItem);
+      decreaseQuantity();
     })
     .appendTo(amount);
 
@@ -51,7 +52,8 @@ function addProductToCart(productItem) {
     .addClass("increaseAndDecrease")
     .html("+")
     .on("click", function () {
-      increaseProducts(productItem);
+      // increaseProducts(productItem);
+      increaseQuantity();
     })
     .appendTo(amount);
   amount.appendTo(addToCartDiv);
@@ -89,4 +91,19 @@ function descriptionPart(productItem) {
   let about = $("#about");
   $("<h1>").html(productItem.name).appendTo(about);
   $("<p>").html(productItem.description).appendTo(about);
+}
+
+function increaseQuantity() {
+let add = parseInt($("#amountOfBeer").val());
+add++;
+$("#amountOfBeer").val(add);
+}
+
+function decreaseQuantity() {
+  let sub = parseInt($("#amountOfBeer").val());
+  sub--;
+  $("#amountOfBeer").val(sub);
+  if(parseInt($("#amountOfBeer").val()) < 1) {
+    parseInt($("#amountOfBeer").val(1));
+  }
 }
