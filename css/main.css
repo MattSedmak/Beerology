@@ -44,14 +44,14 @@
       width: 50%; }
 
 #addToCartBtn {
-  margin-top: 5px;
-  padding: 3px 25px;
   background-color: #f7d36e;
   border: 1px solid #f5b301;
-  color: black;
   border-radius: 20px;
+  color: black;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 3px 25px; }
 
 #cart {
   border: 2px solid #111;
@@ -222,25 +222,28 @@ hr {
     width: 15%;
     margin: 10px; }
   #addToCartDiv div .increaseAndDecrease {
-    background-color: #fed053;
+    background-color: #f7d36e;
     border: 1px solid #f5b301;
+    border-radius: 20px;
     color: black;
+    text-align: center;
+    cursor: pointer;
     padding: 2px;
     width: 10%;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
     cursor: pointer;
     margin-bottom: 20px; }
   #addToCartDiv .addToCartButton {
-    background-color: #fed053;
+    background-color: #f7d36e;
     border: 1px solid #f5b301;
-    color: black;
     border-radius: 20px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
     padding: 5px;
     width: 90%;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;

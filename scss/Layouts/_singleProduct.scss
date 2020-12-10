@@ -35,12 +35,9 @@ hr {
     }
 
     .increaseAndDecrease {
-      background-color: #fed053;
-      border: 1px solid #f5b301;
-      color: black;
+      @include buttons;
       padding: 2px;
       width: 10%;
-      text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 14px;
@@ -50,13 +47,9 @@ hr {
   }
 
   .addToCartButton {
-    background-color: #fed053;
-    border: 1px solid #f5b301;
-    color: black;
-    border-radius: 20px;
+    @include buttons;
     padding: 5px;
     width: 90%;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
@@ -86,7 +79,6 @@ hr {
 #about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include center;
   margin: 30px;
 }
