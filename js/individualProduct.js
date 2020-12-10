@@ -35,7 +35,6 @@ function addProductToCart(productItem) {
     .html("-")
     .addClass("increaseAndDecrease")
     .on("click", function () {
-      // decreaseProducts(productItem);
       decreaseQuantity();
     })
     .appendTo(amount);
@@ -52,7 +51,6 @@ function addProductToCart(productItem) {
     .addClass("increaseAndDecrease")
     .html("+")
     .on("click", function () {
-      // increaseProducts(productItem);
       increaseQuantity();
     })
     .appendTo(amount);
@@ -63,9 +61,29 @@ function addProductToCart(productItem) {
     .attr("type", "button")
     .html("Add to cart")
     .on("click", { b: productItem }, function (e) {
-      addToCart(e.data.b);
+      quanitityToCart(e.data.b);
     })
     .appendTo(addToCartDiv);
+}
+
+function quanitityToCart(product) {
+  let value = parseInt($("#amountOfBeer").val());
+  let x = 0;
+
+  for (let i = 0; i < cart.length; i++) {
+    if (product.id === cart[i].id) {
+      cart[i].inCart += value;
+      x++;
+    }
+  }
+
+  if (x == 0) {
+    product.inCart = value;
+    cart.push(product);
+  }
+
+  saveToLS();
+  renderCart();
 }
 
 function createTable(productItem) {
