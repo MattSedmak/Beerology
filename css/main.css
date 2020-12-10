@@ -135,10 +135,27 @@
   .navbar .menu-btn {
     position: relative;
     left: 20px;
-    font-size: 1.5em;
-    color: #000; }
+    display: flex;
+    flex-direction: column; }
+    .navbar .menu-btn > span {
+      display: block;
+      margin: 2px;
+      height: 4px;
+      width: 28px;
+      border-radius: 10px;
+      background-color: #000;
+      transition: transform 0.4s ease-in-out, opacity 0.4s; }
     .navbar .menu-btn:hover {
       cursor: pointer; }
+    .navbar .menu-btn.active span:nth-child(1) {
+      transform-origin: center center;
+      transform: rotate(135deg) translate(6px, -2px); }
+    .navbar .menu-btn.active span:nth-child(2) {
+      transform: translateX(10px);
+      opacity: 0; }
+    .navbar .menu-btn.active span:nth-child(3) {
+      transform-origin: center center;
+      transform: rotate(-135deg) translate(9px, 6px); }
   .navbar .shoppingCart {
     position: relative;
     right: 20px;
@@ -156,8 +173,7 @@
   top: 80px;
   width: 100%;
   padding: 10px 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  z-index: 99;
+  background-color: rgba(254, 208, 83, 0.7);
   transition: all 0.2s ease;
   list-style-type: none;
   display: none; }
@@ -170,10 +186,10 @@
     padding: 10px; }
     .menu-panel li a {
       text-decoration: none;
-      color: #fff;
+      color: #000;
       font-weight: 600; }
       .menu-panel li a:hover, .menu-panel li a:active {
-        color: #000; }
+        color: #fff; }
 
 .expand {
   display: block; }

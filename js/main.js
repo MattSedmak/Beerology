@@ -1,6 +1,7 @@
 $(function () {
   // Hambuger toggle
   $(".menu-btn").on("click", function () {
+    $(".menu-btn").toggleClass("active");
     $(".menu-panel").toggle("fade").toggleClass("expand");
   });
 
@@ -81,7 +82,7 @@ function renderCart() {
       .appendTo($cartCard);
 
     $("<span>")
-      .html("X")
+      .html("<i class='fas fa-trash'></i>")
       .on("click", function (e) {
         remove(currentProduct);
         $(e.target).parent().remove();
@@ -125,6 +126,9 @@ function remove(product) {
       cart.splice(i, 1);
     }
   }
+  calcTotal();
+  calcProducts();
+  renderCart();
   saveToLS();
 }
 function saveToLS() {
