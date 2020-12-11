@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffff;
+    color: #fff;
     font-size: 45px;
     text-transform: uppercase; }
 
@@ -32,7 +32,7 @@
   #allBeersContainer .individualBeerContainer {
     flex-grow: 1;
     flex: 100%;
-    max-width: 33%;
+    max-width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,45 +41,77 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
     margin: 10px; }
     #allBeersContainer .individualBeerContainer img {
-      width: 50%; }
+      width: 100%; }
 
 #addToCartBtn {
-  margin-top: 5px;
-  padding: 3px 25px;
   background-color: #f7d36e;
   border: 1px solid #f5b301;
-  color: black;
   border-radius: 20px;
+  color: black;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 3px 25px; }
 
 #cart {
   border: 2px solid #111;
-  background-color: #fff;
+  background-color: #f8efd6;
   position: absolute;
   min-height: 5rem;
-  top: 70px;
-  right: 30px;
-  width: 400px;
+  top: 60px;
+  right: 20px;
+  width: 340px;
   display: none;
   z-index: 999;
-  flex-direction: column; }
-
-#cart img {
-  width: 100px; }
-
-.cartCard {
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
-
-.totalprice {
-  border: 1px solid red;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 400px;
-  height: 50px; }
+  flex-direction: column;
+  padding: 20px; }
+  #cart h3 {
+    text-align: center;
+    margin-bottom: 20px; }
+  #cart .cartCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    font-size: 12px; }
+    #cart .cartCard img {
+      width: 60px; }
+    #cart .cartCard #cartProductName {
+      margin-left: 0; }
+    #cart .cartCard button {
+      background-color: #f7d36e;
+      border: 1px solid #f5b301;
+      border-radius: 20px;
+      color: black;
+      text-align: center;
+      cursor: pointer;
+      width: 15px;
+      border-radius: 2px; }
+    #cart .cartCard input {
+      width: 25px; }
+    #cart .cartCard .fa-trash {
+      cursor: pointer; }
+  #cart .totalprice {
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    padding: 30px;
+    height: 50px; }
+  #cart #checkoutBtn {
+    margin-top: 10px;
+    background-color: #f7d36e;
+    border: 1px solid #f5b301;
+    border-radius: 20px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%; }
 
 .footerSection {
   background-color: #fed053;
@@ -135,10 +167,27 @@
   .navbar .menu-btn {
     position: relative;
     left: 20px;
-    font-size: 1.5em;
-    color: #000; }
+    display: flex;
+    flex-direction: column; }
+    .navbar .menu-btn > span {
+      display: block;
+      margin: 2px;
+      height: 4px;
+      width: 28px;
+      border-radius: 10px;
+      background-color: #000;
+      transition: transform 0.4s ease-in-out, opacity 0.4s; }
     .navbar .menu-btn:hover {
       cursor: pointer; }
+    .navbar .menu-btn.active span:nth-child(1) {
+      transform-origin: center center;
+      transform: rotate(135deg) translate(6px, -2px); }
+    .navbar .menu-btn.active span:nth-child(2) {
+      transform: translateX(10px);
+      opacity: 0; }
+    .navbar .menu-btn.active span:nth-child(3) {
+      transform-origin: center center;
+      transform: rotate(-135deg) translate(9px, 6px); }
   .navbar .shoppingCart {
     position: relative;
     right: 20px;
@@ -156,8 +205,7 @@
   top: 80px;
   width: 100%;
   padding: 10px 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  z-index: 99;
+  background-color: rgba(254, 208, 83, 0.7);
   transition: all 0.2s ease;
   list-style-type: none;
   display: none; }
@@ -170,10 +218,10 @@
     padding: 10px; }
     .menu-panel li a {
       text-decoration: none;
-      color: #fff;
+      color: #000;
       font-weight: 600; }
       .menu-panel li a:hover, .menu-panel li a:active {
-        color: #000; }
+        color: #fff; }
 
 .expand {
   display: block; }
@@ -195,41 +243,43 @@ hr {
   width: 80%;
   margin: auto; }
 
-#addToCart {
+#addToCartDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin-left: 10%;
   margin-top: 20px; }
-  #addToCart div input {
+  #addToCartDiv div input {
     width: 15%;
     margin: 10px; }
-  #addToCart div .increaseAndDecrease {
-    background-color: #fed053;
+  #addToCartDiv div .increaseAndDecrease {
+    background-color: #f7d36e;
     border: 1px solid #f5b301;
+    border-radius: 20px;
     color: black;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 0;
     padding: 2px;
     width: 10%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 14px;
-    cursor: pointer;
     margin-bottom: 20px; }
-  #addToCart .addToCartButton {
-    background-color: #fed053;
+  #addToCartDiv .addToCartButton {
+    background-color: #f7d36e;
     border: 1px solid #f5b301;
-    color: black;
     border-radius: 20px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
     padding: 5px;
     width: 90%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 14px;
-    margin-bottom: 20px;
-    cursor: pointer; }
+    margin-bottom: 20px; }
 
 #info {
   margin: 20px;
@@ -271,7 +321,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffff;
+    color: #fff;
     font-size: 35px;
     text-align: center; }
     .headerContent .headerText h1 {
@@ -285,18 +335,18 @@ hr {
     position: relative;
     bottom: 350px; }
     .headerContent .btn-container .button {
-      background-color: #fed053;
+      background-color: #f7d36e;
       border: 1px solid #f5b301;
-      color: black;
-      font-weight: 600;
       border-radius: 20px;
-      padding: 15px 32px;
+      color: black;
       text-align: center;
-      text-decoration: none;
+      cursor: pointer;
       display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 15px 32px;
       font-size: 18px;
-      margin: 4px 2px;
-      cursor: pointer; }
+      margin: 4px 2px; }
 
 * {
   margin: 0;
@@ -317,7 +367,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffff;
+    color: #fff;
     font-size: 45px;
     text-align: center;
     line-height: 100px; }
@@ -328,14 +378,14 @@ hr {
     position: relative;
     bottom: 130px; }
     .orderPayedHeader div .button {
-      background-color: #fed053;
+      background-color: #f7d36e;
       border: 1px solid #f5b301;
-      color: black;
       border-radius: 20px;
-      padding: 15px 32px;
+      color: black;
       text-align: center;
-      text-decoration: none;
+      cursor: pointer;
       display: inline-block;
+      text-decoration: none;
+      padding: 15px 32px;
       font-size: 18px;
-      margin: 4px 2px;
-      cursor: pointer; }
+      margin: 4px 2px; }
