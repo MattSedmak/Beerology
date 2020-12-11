@@ -10,7 +10,7 @@
   .shoppingCart {
     position: relative;
     right: 20px;
-    color: #000;
+    color: $main-font-color;
   }
 
   .menu-btn {
@@ -24,7 +24,7 @@
       height: 4px;
       width: 28px;
       border-radius: 10px;
-      background-color: #000;
+      background-color: $main-font-color;
       transition: transform 0.4s ease-in-out, opacity 0.4s;
     }
     &:hover {
@@ -48,7 +48,7 @@
   .shoppingCart {
     position: relative;
     right: 20px;
-    color: #000;
+    color: $main-font-color;
     .fa-shopping-cart {
       font-size: 1.2em;
       &:hover {
@@ -67,7 +67,6 @@
   width: 100%;
   padding: 10px 0;
   background-color: rgba(254, 208, 83, 0.7);
-  // z-index: 99;
   transition: all 0.2s ease;
   list-style-type: none;
   display: none;
@@ -81,11 +80,11 @@
     padding: 10px;
     a {
       text-decoration: none;
-      color: #000;
+      color: $main-font-color;
       font-weight: 600;
       &:hover,
       &:active {
-        color: #fff;
+        color: $hover-font-color;
       }
     }
   }
