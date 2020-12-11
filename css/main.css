@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffff;
+    color: #fff;
     font-size: 45px;
     text-transform: uppercase; }
 
@@ -32,7 +32,7 @@
   #allBeersContainer .individualBeerContainer {
     flex-grow: 1;
     flex: 100%;
-    max-width: 33%;
+    max-width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,17 +41,19 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
     margin: 10px; }
     #allBeersContainer .individualBeerContainer img {
-      width: 50%; }
+      width: 100%; }
 
 #addToCartBtn {
-  margin-top: 5px;
-  padding: 3px 25px;
   background-color: #f7d36e;
   border: 1px solid #f5b301;
-  color: black;
   border-radius: 20px;
+  color: black;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 3px 25px; }
 
 #cart {
   border: 2px solid #111;
@@ -201,10 +203,27 @@
   .navbar .menu-btn {
     position: relative;
     left: 20px;
-    font-size: 1.5em;
-    color: #000; }
+    display: flex;
+    flex-direction: column; }
+    .navbar .menu-btn > span {
+      display: block;
+      margin: 2px;
+      height: 4px;
+      width: 28px;
+      border-radius: 10px;
+      background-color: #000;
+      transition: transform 0.4s ease-in-out, opacity 0.4s; }
     .navbar .menu-btn:hover {
       cursor: pointer; }
+    .navbar .menu-btn.active span:nth-child(1) {
+      transform-origin: center center;
+      transform: rotate(135deg) translate(6px, -2px); }
+    .navbar .menu-btn.active span:nth-child(2) {
+      transform: translateX(10px);
+      opacity: 0; }
+    .navbar .menu-btn.active span:nth-child(3) {
+      transform-origin: center center;
+      transform: rotate(-135deg) translate(9px, 6px); }
   .navbar .shoppingCart {
     position: relative;
     right: 20px;
@@ -222,8 +241,7 @@
   top: 80px;
   width: 100%;
   padding: 10px 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  z-index: 99;
+  background-color: rgba(254, 208, 83, 0.7);
   transition: all 0.2s ease;
   list-style-type: none;
   display: none; }
@@ -236,10 +254,10 @@
     padding: 10px; }
     .menu-panel li a {
       text-decoration: none;
-      color: #fff;
+      color: #000;
       font-weight: 600; }
       .menu-panel li a:hover, .menu-panel li a:active {
-        color: #000; }
+        color: #fff; }
 
 .expand {
   display: block; }
@@ -272,30 +290,32 @@ hr {
     width: 15%;
     margin: 10px; }
   #addToCartDiv div .increaseAndDecrease {
-    background-color: #fed053;
+    background-color: #f7d36e;
     border: 1px solid #f5b301;
+    border-radius: 20px;
     color: black;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 0;
     padding: 2px;
     width: 10%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 14px;
-    cursor: pointer;
     margin-bottom: 20px; }
   #addToCartDiv .addToCartButton {
-    background-color: #fed053;
+    background-color: #f7d36e;
     border: 1px solid #f5b301;
-    color: black;
     border-radius: 20px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
     padding: 5px;
     width: 90%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 14px;
-    margin-bottom: 20px;
-    cursor: pointer; }
+    margin-bottom: 20px; }
 
 #info {
   margin: 20px;
@@ -337,7 +357,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffff;
+    color: #fff;
     font-size: 35px;
     text-align: center; }
     .headerContent .headerText h1 {
@@ -351,18 +371,18 @@ hr {
     position: relative;
     bottom: 350px; }
     .headerContent .btn-container .button {
-      background-color: #fed053;
+      background-color: #f7d36e;
       border: 1px solid #f5b301;
-      color: black;
-      font-weight: 600;
       border-radius: 20px;
-      padding: 15px 32px;
+      color: black;
       text-align: center;
-      text-decoration: none;
+      cursor: pointer;
       display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 15px 32px;
       font-size: 18px;
-      margin: 4px 2px;
-      cursor: pointer; }
+      margin: 4px 2px; }
 
 * {
   margin: 0;
@@ -383,7 +403,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffff;
+    color: #fff;
     font-size: 45px;
     text-align: center;
     line-height: 100px; }
@@ -394,14 +414,14 @@ hr {
     position: relative;
     bottom: 130px; }
     .orderPayedHeader div .button {
-      background-color: #fed053;
+      background-color: #f7d36e;
       border: 1px solid #f5b301;
-      color: black;
       border-radius: 20px;
-      padding: 15px 32px;
+      color: black;
       text-align: center;
-      text-decoration: none;
+      cursor: pointer;
       display: inline-block;
+      text-decoration: none;
+      padding: 15px 32px;
       font-size: 18px;
-      margin: 4px 2px;
-      cursor: pointer; }
+      margin: 4px 2px; }

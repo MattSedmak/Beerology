@@ -1,6 +1,7 @@
 $(function () {
   // Hambuger toggle
   $(".menu-btn").on("click", function () {
+    $(".menu-btn").toggleClass("active");
     $(".menu-panel").toggle("fade").toggleClass("expand");
   });
 
@@ -44,7 +45,11 @@ function renderCart() {
     $cartCard = $("<div>");
     $cartCard.addClass("cartCard");
 
-    $("<img>").attr("src", currentProduct.image).appendTo($cartCard);
+    if (window.location.href.indexOf("index.html") > -1) {
+      $("<img>").attr("src", currentProduct.imageForStart).appendTo($cartCard);
+    } else {
+      $("<img>").attr("src", currentProduct.image).appendTo($cartCard);
+    }
 
     $("<span>")
       .html(currentProduct.name + " ")
@@ -81,7 +86,7 @@ function renderCart() {
       .appendTo($cartCard);
 
     $("<span>")
-      .html("X")
+      .html("<i class='fas fa-trash'></i>")
       .on("click", function (e) {
         remove(currentProduct);
         $(e.target).parent().remove();
@@ -125,6 +130,9 @@ function remove(product) {
       cart.splice(i, 1);
     }
   }
+  calcTotal();
+  calcProducts();
+  renderCart();
   saveToLS();
 }
 function saveToLS() {

@@ -2,19 +2,23 @@ $(function () {
   renderProduct();
 });
 function renderProduct() {
-  let productItem = JSON.parse(sessionStorage.getItem("productItem"));
-  $("title").html(productItem.name);
-  let product = $("#product");
-  $("<img>").attr("src", productItem.image).appendTo(product);
-  $("<p>").html(productItem.name).appendTo(product);
-  $("<p>").html(productItem.type).appendTo(product);
-  $("<p>")
-    .html("$" + productItem.price)
-    .appendTo(product);
-  addProductToCart(productItem);
-  createTable(productItem);
-  descriptionPart(productItem);
+  let productItem = JSON.parse(sessionStorage.getItem("productItem")) || [];
+
+  if (productItem !== 0) {
+    $("title").html(productItem.name);
+    let product = $("#product");
+    $("<img>").attr("src", productItem.image).appendTo(product);
+    $("<p>").html(productItem.name).appendTo(product);
+    $("<p>").html(productItem.type).appendTo(product);
+    $("<p>")
+      .html("$" + productItem.price)
+      .appendTo(product);
+    addProductToCart(productItem);
+    createTable(productItem);
+    descriptionPart(productItem);
+  }
 }
+
 function addProductToCart(productItem) {
   let addToCartDiv = $("#addToCartDiv");
   $("<label>")

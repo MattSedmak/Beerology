@@ -18,9 +18,8 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffff;
+    @include center;
+    color: $hero-font-color;
     font-size: 35px;
     text-align: center;
 
@@ -34,24 +33,16 @@
 
   .btn-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     position: relative;
     bottom: 350px;
 
     .button {
-      background-color: #fed053;
-      border: 1px solid #f5b301;
-      color: black;
+      @include buttons;
       font-weight: 600;
-      border-radius: 20px;
       padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
       font-size: 18px;
       margin: 4px 2px;
-      cursor: pointer;
     }
   }
 }
