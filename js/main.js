@@ -7,7 +7,7 @@ $(function () {
 
   // Shopping cart toggle
   $(".fa-shopping-cart").on("click", function () {
-    $("#cart").toggle("drop");
+    $("#cart").toggle("drop right");
   });
   $(".headerText").hide().fadeIn(2000);
   // Loopar genom cart on load
@@ -40,6 +40,8 @@ function addToCart(product) {
 function renderCart() {
   document.getElementById("cart").innerHTML = " ";
 
+  $("<h3>").html("My Shopping Cart:").appendTo($("#cart"));
+
   for (let i = 0; i < cart.length; i++) {
     let currentProduct = cart[i];
     $cartCard = $("<div>");
@@ -52,6 +54,7 @@ function renderCart() {
     }
 
     $("<span>")
+      .attr("id", "cartProductName")
       .html(currentProduct.name + " ")
       .appendTo($cartCard);
 
@@ -98,13 +101,20 @@ function renderCart() {
   $totalPrice = $("<div>");
   $totalPrice.addClass("totalprice");
 
-  $("<p>")
-    .html("Total: " + "$" + calcTotal())
-    .appendTo($totalPrice);
-
-  $("<button>").attr("type", "button").html("Checkout").appendTo($totalPrice);
-
+  $("<p>").html("Total: ").appendTo($totalPrice);
   $totalPrice.appendTo("#cart");
+
+  $("<span>")
+    .html("$" + calcTotal())
+    .appendTo($totalPrice);
+  $totalPrice.appendTo("#cart");
+
+  $("<button>")
+    .attr("type", "button")
+    .attr("id", "checkoutBtn")
+    .html("Checkout")
+    .appendTo("#cart");
+
   calcProducts();
 }
 function calcTotal() {
