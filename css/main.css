@@ -168,20 +168,24 @@
     justify-content: center;
     align-items: center; }
     .checkoutPage .formContainer form {
-      width: 80%; }
-      .checkoutPage .formContainer form button {
-        background-color: #fed053;
-        border: 1px solid #f5b301;
-        color: black;
-        border-radius: 20px;
-        padding: 5px;
-        width: 90%;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-        margin-bottom: 20px;
-        cursor: pointer; }
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px; }
+    .checkoutPage .formContainer button {
+      background-color: #fed053;
+      border: 1px solid #f5b301;
+      color: black;
+      border-radius: 20px;
+      padding: 5px;
+      width: 90%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin-bottom: 20px;
+      cursor: pointer; }
 
 .footerSection {
   background-color: #fed053;

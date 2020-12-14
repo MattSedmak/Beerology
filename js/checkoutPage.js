@@ -34,6 +34,6 @@ function checkoutRender() {
     form.appendTo(formContainer);
     $("<label>").attr("for", "fName").html("Firstname:").appendTo(form);
     $("<input>").attr("type", "text").attr("id", "fName").appendTo(form);
-    $("<button>").attr("type", "button").html("Purchase").appendTo(form);
+    $("<button>").attr("type", "button").html("Purchase").appendTo(formContainer);
 
 }
