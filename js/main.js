@@ -113,6 +113,10 @@ function renderCart() {
     .attr("type", "button")
     .attr("id", "checkoutBtn")
     .html("Checkout")
+    .on("click", function() {
+      //fix from homepage
+      window.location.assign("../HTML/checkoutPage.html");
+    })
     .appendTo("#cart");
 
   calcProducts();
@@ -156,6 +160,7 @@ function decreaseProducts(currentProduct) {
   if (currentProduct.inCart === 0) {
     remove(currentProduct);
     renderCart();
+    checkoutRender();
   }
 }
 
@@ -163,10 +168,14 @@ function increaseProducts(currentProduct) {
   currentProduct.inCart++;
   saveToLS();
   renderCart();
+  checkoutRender();
+  console.log("Tryck plus");
 }
 
 function changeInCartValue(inputValue, currentProduct) {
   currentProduct.inCart = inputValue;
   saveToLS();
   renderCart();
+  console.log("Kom in");
+  checkoutRender();
 }
