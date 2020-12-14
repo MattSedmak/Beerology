@@ -1,9 +1,13 @@
-$(function() {
-    orderConfirmation();
-})
+$(function () {
+  orderConfirmation();
+});
 
-function orderConfirmation(firstName) {
-    $("<p>")
-    .html(firstName)
+function orderConfirmation() {
+  let firstname = JSON.parse(sessionStorage.getItem("customerInfo")) || [];
+  console.log(firstname);
+  let orderNumb = Math.round(Math.random() * 100000);
+  $("<p>").html(firstname).appendTo(".orderPayedText");
+  $("<p>")
+    .html("Order number: " + orderNumb)
     .appendTo(".orderPayedText");
 }

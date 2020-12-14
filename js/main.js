@@ -39,6 +39,7 @@ function addToCart(product) {
 }
 function renderCart() {
   document.getElementById("cart").innerHTML = " ";
+  console.log(cart);
 
   $("<h3>").html("My Shopping Cart:").appendTo($("#cart"));
 
@@ -113,7 +114,7 @@ function renderCart() {
     .attr("type", "button")
     .attr("id", "checkoutBtn")
     .html("Checkout")
-    .on("click", function() {
+    .on("click", function () {
       //fix from homepage
       window.location.assign("../HTML/checkoutPage.html");
     })
@@ -147,6 +148,7 @@ function remove(product) {
   calcTotal();
   calcProducts();
   renderCart();
+  checkoutRender();
   saveToLS();
 }
 function saveToLS() {
@@ -157,6 +159,7 @@ function decreaseProducts(currentProduct) {
   currentProduct.inCart--;
   saveToLS();
   renderCart();
+  checkoutRender();
   if (currentProduct.inCart === 0) {
     remove(currentProduct);
     renderCart();
