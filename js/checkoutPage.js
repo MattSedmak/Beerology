@@ -74,24 +74,35 @@ function checkoutRender() {
 function customerForm() {
   let formContainer = $(".formContainer");
   let form = $("<form>");
-  form.appendTo(formContainer);
+  form.on("submit", function (e) {
+    e.preventDefault();
+    customerToSS($("#fName").val());
+    window.location.assign("../HTML/thankYouPage.html");
+  });
+
   $("<label>").attr("for", "fName").html("Firstname:").appendTo(form);
-  $("<input>").attr("type", "text").attr("id", "fName").appendTo(form);
+  $("<input>")
+    .attr("type", "text")
+    .attr("id", "fName")
+    .prop("required", true)
+    .appendTo(form);
 
   $("<label>").attr("for", "lName").html("Lastname:").appendTo(form);
-  $("<input>").attr("type", "text").attr("id", "lName").appendTo(form);
+  $("<input>")
+    .attr("type", "text")
+    .attr("id", "lName")
+    .prop("required", true)
+    .appendTo(form);
 
   $("<label>").attr("for", "formMail").html("E-mail:").appendTo(form);
-  $("<input>").attr("type", "email").attr("id", "formMail").appendTo(form);
+  $("<input>")
+    .attr("type", "email")
+    .attr("id", "formMail")
+    .prop("required", true)
+    .appendTo(form);
 
-  $("<button>")
-    .attr("type", "button")
-    .html("Purchase")
-    .on("click", function () {
-      customerToSS($("#fName").val());
-      window.location.assign("../HTML/thankYouPage.html");
-    })
-    .appendTo(formContainer);
+  $("<button>").attr("type", "submit").html("Purchase").appendTo(form);
+  form.appendTo(formContainer);
 }
 
 function customerToSS(firstName) {
