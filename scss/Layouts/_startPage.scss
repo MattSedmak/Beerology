@@ -25,6 +25,9 @@
 
     h1 {
       padding-bottom: 10px;
+      @include desktops {
+        font-size: 100px;
+      }
     }
     p {
       padding-bottom: 200px;

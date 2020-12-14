@@ -28,21 +28,61 @@
 
 #allBeersContainer {
   display: flex;
+  flex-direction: row;
   @include center;
   flex-wrap: wrap;
 
+  // flex-grow: 1;
+
   .individualBeerContainer {
-    flex-grow: 1;
-    flex: 100%;
-    max-width: 40%;
+    // flex: 50%;
+    // @include desktops {
+    //   flex: 50%;
+    // }
+    // max-width: 40%;
+    // height: 100%;
+    //
+    // display: flex;
+    // flex-direction: column;
+    // flex-grow: 1;
     display: flex;
     flex-direction: column;
-    @include center;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 100%;
+    max-width: 43%;
+    @include desktops {
+      max-width: 22%;
+    }
+
+    // @include center;
+    padding: 20px 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
     margin: 10px;
     img {
       width: 100%;
+      @include desktops {
+        width: 70%;
+      }
+    }
+
+    p:first-of-type {
+      padding-bottom: 10px;
+      font-size: 14px;
+      @include desktops {
+        font-size: 20px;
+        padding-bottom: 20px;
+      }
+
+      text-align: center;
+    }
+    h3 {
+      font-size: 14px;
+      padding: 2px 0;
+      text-align: center;
+      @include desktops {
+        font-size: 25px;
+      }
     }
   }
 }

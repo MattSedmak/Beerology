@@ -26,22 +26,43 @@
 
 #allBeersContainer {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
   #allBeersContainer .individualBeerContainer {
-    flex-grow: 1;
-    flex: 100%;
-    max-width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    flex: 100%;
+    max-width: 43%;
+    padding: 20px 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
     margin: 10px; }
+    @media screen and (min-width: 768px) {
+      #allBeersContainer .individualBeerContainer {
+        max-width: 22%; } }
     #allBeersContainer .individualBeerContainer img {
       width: 100%; }
+      @media screen and (min-width: 768px) {
+        #allBeersContainer .individualBeerContainer img {
+          width: 70%; } }
+    #allBeersContainer .individualBeerContainer p:first-of-type {
+      padding-bottom: 10px;
+      font-size: 14px;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        #allBeersContainer .individualBeerContainer p:first-of-type {
+          font-size: 20px;
+          padding-bottom: 20px; } }
+    #allBeersContainer .individualBeerContainer h3 {
+      font-size: 14px;
+      padding: 2px 0;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        #allBeersContainer .individualBeerContainer h3 {
+          font-size: 25px; } }
 
 #addToCartBtn {
   background-color: #f7d36e;
@@ -419,6 +440,9 @@ hr {
     text-align: center; }
     .headerContent .headerText h1 {
       padding-bottom: 10px; }
+      @media screen and (min-width: 768px) {
+        .headerContent .headerText h1 {
+          font-size: 100px; } }
     .headerContent .headerText p {
       padding-bottom: 200px; }
   .headerContent .btn-container {
