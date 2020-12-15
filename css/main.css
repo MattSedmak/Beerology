@@ -1,11 +1,6 @@
 @charset "UTF-8";
 /******* Importera alla scss filer.********** I
 ******** Ingen Kod ska skrivas här.**********/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
 .allBeersHeader {
   background-image: url("../Pictures/rhett-wesley-beerBottles-unsplash.jpg");
   background-position: center center;
@@ -328,6 +323,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 99;
   /*menu button*/
   /*menu button*/ }
   .navbar .shoppingCart {
@@ -374,7 +370,7 @@
   position: absolute;
   top: 60px;
   width: 100%;
-  padding: 10px 0;
+  padding: 30px 0 10px 0;
   background-color: rgba(254, 208, 83, 0.7);
   transition: all 0.2s ease;
   list-style-type: none;
@@ -537,104 +533,96 @@ hr {
       margin: 50px 0px 0px 0px;
       width: 80%; } }
 
-#wrapper {
-  display: flex;
-  flex-direction: column;
+.headerContent {
+  background-image: url("../Pictures/beerology-startsida.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
   height: 100vh; }
-  #wrapper .headerContent {
-    background-image: url("../Pictures/beerology-startsida.jpg");
-    background-position: center center;
-    background-size: cover;
+  .headerContent .headerText {
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
     width: 100%;
-    height: 100%; }
-    #wrapper .headerContent .headerText {
-      background: rgba(0, 0, 0, 0.2);
-      top: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      font-size: 35px;
-      text-align: center; }
-      #wrapper .headerContent .headerText h1 {
-        padding-bottom: 10px; }
-        @media screen and (min-width: 768px) {
-          #wrapper .headerContent .headerText h1 {
-            font-size: 100px; } }
-      #wrapper .headerContent .headerText p {
-        padding-bottom: 200px; }
-    #wrapper .headerContent .btn-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      bottom: 250px; }
-      #wrapper .headerContent .btn-container .button {
-        background-color: #f7d36e;
-        border: 1px solid #f5b301;
-        border-radius: 20px;
-        color: black;
-        text-align: center;
-        cursor: pointer;
-        display: inline-block;
-        text-decoration: none;
-        font-weight: 600;
-        padding: 15px 32px;
-        font-size: 18px;
-        margin: 4px 2px; }
-        #wrapper .headerContent .btn-container .button:hover, #wrapper .headerContent .btn-container .button:active {
-          opacity: 0.8; }
-
-#ThkYouWrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; }
-  #ThkYouWrapper .orderPayedHeader {
-    background-image: url("../Pictures/beerology-order.jpeg");
-    background-position: center top;
-    background-size: cover;
-    width: 100%;
-    height: 100%; }
-    #ThkYouWrapper .orderPayedHeader .orderPayedText {
-      background: rgba(0, 0, 0, 0.2);
-      top: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    text-align: center; }
+    .headerContent .headerText h1 {
+      padding-bottom: 10px; }
+      @media screen and (min-width: 768px) {
+        .headerContent .headerText h1 {
+          font-size: 100px; } }
+    .headerContent .headerText p {
+      padding-bottom: 200px; }
+  .headerContent .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 270px; }
+    .headerContent .btn-container .button {
+      background-color: #f7d36e;
+      border: 1px solid #f5b301;
+      border-radius: 20px;
+      color: black;
       text-align: center;
-      line-height: 2em; }
-      #ThkYouWrapper .orderPayedHeader .orderPayedText h3 {
-        font-size: 30px; }
-      #ThkYouWrapper .orderPayedHeader .orderPayedText p {
-        font-size: 20px;
-        font-weight: 600; }
-    #ThkYouWrapper .orderPayedHeader div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      bottom: 130px; }
-      #ThkYouWrapper .orderPayedHeader div .button {
-        background-color: #f7d36e;
-        border: 1px solid #f5b301;
-        border-radius: 20px;
-        color: black;
-        text-align: center;
-        cursor: pointer;
-        display: inline-block;
-        text-decoration: none;
-        padding: 15px 32px;
-        font-size: 18px;
-        margin: 4px 2px; }
-        #ThkYouWrapper .orderPayedHeader div .button:hover, #ThkYouWrapper .orderPayedHeader div .button:active {
-          opacity: 0.8; }
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 15px 32px;
+      font-size: 18px;
+      margin: 4px 2px; }
+      .headerContent .btn-container .button:hover, .headerContent .btn-container .button:active {
+        opacity: 0.8; }
+
+.orderPayedHeader {
+  background-image: url("../Pictures/beerology-order.jpeg");
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  height: 100vh; }
+  .orderPayedHeader .orderPayedText {
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    line-height: 2em; }
+    .orderPayedHeader .orderPayedText h3 {
+      font-size: 30px; }
+    .orderPayedHeader .orderPayedText p {
+      font-size: 20px;
+      font-weight: 600; }
+  .orderPayedHeader div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 250px; }
+    .orderPayedHeader div .button {
+      background-color: #f7d36e;
+      border: 1px solid #f5b301;
+      border-radius: 20px;
+      color: black;
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      padding: 15px 32px;
+      font-size: 18px;
+      margin: 4px 2px; }
+      .orderPayedHeader div .button:hover, .orderPayedHeader div .button:active {
+        opacity: 0.8; }
 
 * {
   margin: 0;

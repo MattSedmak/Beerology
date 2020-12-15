@@ -46,7 +46,7 @@ let ipa = new Beers(
   "6,5%",
   "3/5",
   "One of the key players that helped kick-start the Craft Beer revolution, BrewDog are the original Punk Brewers, and this go-ahead attitude is never clearer than in Punk IPA, the original British Craft IPA. This sparkling bright gold IPA is bursting with light, bright malts, with fresh, crisp, melon, passionfruit citrus and pine hops, and a deliciously light body that together make this one hell of a drinkable IPA.",
-  2.5
+  4
 );
 let paleAle = new Beers(
   3,
@@ -58,7 +58,7 @@ let paleAle = new Beers(
   "5,6%",
   "5/5",
   "Camden Pale Ale by the redoubtable Camden Town Brewery is a light, refreshing Pale Ale with a sparkling pale yellow body, and a fine white head, harbouring light malts and zesty grapefruit and lemon hops, with a delicious herbal backnote. The tasting experience closes on a bright citrus note with soft, clean malts.",
-  2.5
+  3
 );
 let sour = new Beers(
   4,
@@ -70,7 +70,7 @@ let sour = new Beers(
   "3,5%",
   "4/5",
   "Sour Monkey puts a tastefully tart twist on our Golden Monkey's sweet, fruity essence. A sharp, citrus-laden tang makes this brew a Monkey all its own! This Sour Ale style beer is best paired with salads or peppery style cheeses such as Monterey / Pepper Jack and pungent style cheese such as Gorgonzola and Limburger.",
-  3
+  5
 );
 
 let wheat = new Beers(
@@ -96,7 +96,7 @@ let porter = new Beers(
   "5,5%",
   "3.5/5",
   "In 1836, it was taken over by David Carnegie. The Carnegie Porter has since then been the dominating porter in Sweden. This brew has a slightly roasted aroma with hint of brown sugar and coffee. The taste is round and complex with hints of chocolate and coffee and a slight bitterness in the aftertaste.",
-  3.5
+  3
 );
 
 let fruitBeer = new Beers(
@@ -109,7 +109,7 @@ let fruitBeer = new Beers(
   "4,5%",
   "4.3/5",
   "1664 Mûre Myrtille is a refreshing and fruity wheat beer. This beer offers a perfect balance between the fruity flavours of blackberry and blueberry and floral notes, along with subtle notes of malt. Ideal for all moments of conviviality.",
-  2
+  3
 );
 
 let stout = new Beers(
@@ -122,7 +122,7 @@ let stout = new Beers(
   "6,8%",
   "4/5",
   "Mežpils Porter is a special variety of a traditional strong beer with a wonderful taste of caramel and a slight tone of wine, which may also come through in the aroma.",
-  3.5
+  6
 );
 
 let darkLager = new Beers(
@@ -148,7 +148,7 @@ let seasonalBrew = new Beers(
   "5,2%",
   "4.8/5",
   "A tasty strong brew with a soft and delicate sweetness that combines the full-bodied taste of roasted malt and the bitterness of aroma hops. Falcon Julöl (Christmass Beer) is Sweden's most popular Christmas beer, designed as a perfect compliment to all the traditional Swedish delicacies. It’s a full malt beer, brewed with a special blend of malts to give the right golden brown colour and full-bodied aroma.",
-  2.5
+  2
 );
 
 let allBeers = [
