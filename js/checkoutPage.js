@@ -13,7 +13,6 @@ function checkoutRender() {
 
 
   for (let i = 0; i < cart.length; i++) {
-    console.log(cart[i].inCart);
     let productCard = $("<div>").addClass("productCard");
     $("<img>")
       .attr("src", cart[i].image)
