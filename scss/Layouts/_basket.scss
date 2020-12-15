@@ -29,6 +29,9 @@
 
     #cartProductName {
       margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 25%;
     }
     button {
       @include buttons;

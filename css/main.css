@@ -113,7 +113,10 @@
     #cart .cartCard img {
       width: 60px; }
     #cart .cartCard #cartProductName {
-      margin-left: 0; }
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 25%; }
     #cart .cartCard button {
       background-color: #f7d36e;
       border: 1px solid #f5b301;
@@ -430,11 +433,6 @@ hr {
   align-items: center;
   margin: 30px; }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Courier New", Courier, monospace; }
-
 #wrapper {
   display: flex;
   flex-direction: column;
@@ -486,44 +484,56 @@ hr {
         #wrapper .headerContent .btn-container .button:hover, #wrapper .headerContent .btn-container .button:active {
           opacity: 0.8; }
 
+#ThkYouWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  #ThkYouWrapper .orderPayedHeader {
+    background-image: url("../Pictures/beerology-order.jpeg");
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 100%; }
+    #ThkYouWrapper .orderPayedHeader .orderPayedText {
+      background: rgba(0, 0, 0, 0.2);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      line-height: 2em; }
+      #ThkYouWrapper .orderPayedHeader .orderPayedText h3 {
+        font-size: 30px; }
+      #ThkYouWrapper .orderPayedHeader .orderPayedText p {
+        font-size: 20px;
+        font-weight: 600; }
+    #ThkYouWrapper .orderPayedHeader div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 130px; }
+      #ThkYouWrapper .orderPayedHeader div .button {
+        background-color: #f7d36e;
+        border: 1px solid #f5b301;
+        border-radius: 20px;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        padding: 15px 32px;
+        font-size: 18px;
+        margin: 4px 2px; }
+        #ThkYouWrapper .orderPayedHeader div .button:hover, #ThkYouWrapper .orderPayedHeader div .button:active {
+          opacity: 0.8; }
+
 * {
   margin: 0;
-  padding: 0; }
-
-.orderPayedHeader {
-  background-image: url("../Pictures/beerology-order.jpeg");
-  background-position: center top;
-  background-size: cover;
-  width: 100%;
-  height: 100vh; }
-  .orderPayedHeader .orderPayedText {
-    background: rgba(0, 0, 0, 0.2);
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 45px;
-    text-align: center;
-    line-height: 100px; }
-  .orderPayedHeader div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 130px; }
-    .orderPayedHeader div .button {
-      background-color: #f7d36e;
-      border: 1px solid #f5b301;
-      border-radius: 20px;
-      color: black;
-      text-align: center;
-      cursor: pointer;
-      display: inline-block;
-      text-decoration: none;
-      padding: 15px 32px;
-      font-size: 18px;
-      margin: 4px 2px; }
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace; }
