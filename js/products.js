@@ -170,7 +170,6 @@ $(function () {
 
 function printBeer() {
   $.each(allBeers, (i, beer) => {
-    // console.log(beer);
     let $container = $("<div>");
     $container.addClass("individualBeerContainer");
     $("<img>")
@@ -181,12 +180,7 @@ function printBeer() {
         window.location.assign("../HTML/singleProductPage.html");
       })
       .appendTo($container);
-    $("<h3>")
-      .html(beer.name)
-      //.on("click", function () {
-      //testar(e.data.b);
-      //})
-      .appendTo($container);
+    $("<h3>").html(beer.name).appendTo($container);
     $("<p>").html(beer.type).appendTo($container);
     $("<p>")
       .html("$" + beer.price)

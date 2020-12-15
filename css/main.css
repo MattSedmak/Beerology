@@ -11,11 +11,14 @@
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 40vh; }
+  height: 20vh; }
+  @media screen and (min-width: 768px) {
+    .allBeersHeader {
+      height: 40vh; } }
   .allBeersHeader .allBeersText {
     background: rgba(255, 255, 255, 0.2);
     width: 100%;
-    height: 40vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,22 +29,46 @@
 
 #allBeersContainer {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
   #allBeersContainer .individualBeerContainer {
-    flex-grow: 1;
-    flex: 100%;
-    max-width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    flex: 100%;
+    max-width: 43%;
+    padding: 20px 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
     margin: 10px; }
+    @media screen and (min-width: 768px) {
+      #allBeersContainer .individualBeerContainer {
+        max-width: 22%; } }
     #allBeersContainer .individualBeerContainer img {
       width: 100%; }
+      @media screen and (min-width: 768px) {
+        #allBeersContainer .individualBeerContainer img {
+          width: 70%; } }
+      #allBeersContainer .individualBeerContainer img:hover, #allBeersContainer .individualBeerContainer img:active {
+        cursor: pointer;
+        opacity: 0.8; }
+    #allBeersContainer .individualBeerContainer p:first-of-type {
+      padding-bottom: 10px;
+      font-size: 14px;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        #allBeersContainer .individualBeerContainer p:first-of-type {
+          font-size: 20px;
+          padding-bottom: 20px; } }
+    #allBeersContainer .individualBeerContainer h3 {
+      font-size: 14px;
+      padding: 2px 0;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        #allBeersContainer .individualBeerContainer h3 {
+          font-size: 25px; } }
 
 #addToCartBtn {
   background-color: #f7d36e;
@@ -54,6 +81,12 @@
   text-decoration: none;
   margin-top: 5px;
   padding: 3px 25px; }
+  @media screen and (min-width: 768px) {
+    #addToCartBtn {
+      padding: 8px 25px; } }
+  #addToCartBtn:hover, #addToCartBtn:active {
+    opacity: 0.8;
+    font-weight: 600; }
 
 #cart {
   border: 2px solid #111;
@@ -80,7 +113,10 @@
     #cart .cartCard img {
       width: 60px; }
     #cart .cartCard #cartProductName {
-      margin-left: 0; }
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 25%; }
     #cart .cartCard button {
       background-color: #f7d36e;
       border: 1px solid #f5b301;
@@ -88,6 +124,8 @@
       color: black;
       text-align: center;
       cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
       width: 15px;
       border-radius: 2px; }
     #cart .cartCard input {
@@ -110,26 +148,154 @@
     color: black;
     text-align: center;
     cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
     padding: 5px;
     width: 100%; }
+    #cart #checkoutBtn:hover, #cart #checkoutBtn:active {
+      opacity: 0.8;
+      font-weight: 600; }
+
+.checkoutPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative; }
+  .checkoutPage h2 {
+    text-transform: uppercase;
+    font-size: 30px;
+    order: -1;
+    position: absolute;
+    top: 30px; }
+  @media screen and (min-width: 768px) {
+    .checkoutPage {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start; } }
+  .checkoutPage .cartContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 20px; }
+    @media screen and (min-width: 768px) {
+      .checkoutPage .cartContainer {
+        width: 40%;
+        margin-bottom: 50px;
+        margin-right: 20px; } }
+    .checkoutPage .cartContainer .productContainer {
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
+      .checkoutPage .cartContainer .productContainer .productCard {
+        width: 95%;
+        margin-top: 15px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(127, 127, 127, 0.1); }
+        .checkoutPage .cartContainer .productContainer .productCard .productCardImg {
+          width: 25%; }
+        .checkoutPage .cartContainer .productContainer .productCard button {
+          background-color: #f7d36e;
+          border: 1px solid #f5b301;
+          border-radius: 20px;
+          color: black;
+          text-align: center;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+          width: 15px;
+          border-radius: 2px; }
+        .checkoutPage .cartContainer .productContainer .productCard input {
+          width: 25px; }
+        .checkoutPage .cartContainer .productContainer .productCard .fa-trash:hover {
+          cursor: pointer; }
+    .checkoutPage .cartContainer hr {
+      margin-top: 40px;
+      margin-bottom: 15px; }
+    .checkoutPage .cartContainer .cartTotal {
+      width: 70%;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: bold; }
+      @media screen and (min-width: 768px) {
+        .checkoutPage .cartContainer .cartTotal {
+          font-size: 20px; } }
+  .checkoutPage .formContainer {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    @media screen and (min-width: 768px) {
+      .checkoutPage .formContainer {
+        max-width: 40%;
+        margin-top: 100px; } }
+    .checkoutPage .formContainer form {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px; }
+      .checkoutPage .formContainer form label {
+        margin: 5px 10px 5px 0; }
+    .checkoutPage .formContainer button {
+      background-color: #f7d36e;
+      border: 1px solid #f5b301;
+      border-radius: 20px;
+      color: black;
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      margin-bottom: 20px; }
+      @media screen and (min-width: 768px) {
+        .checkoutPage .formContainer button {
+          font-size: 16px; } }
 
 .footerSection {
   background-color: #fed053;
   margin-top: auto;
   width: 100%;
-  height: 80px;
+  height: 150px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center; }
+  @media screen and (min-width: 768px) {
+    .footerSection {
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: 100px; } }
   .footerSection .footerLogo {
-    flex: 1;
-    text-align: center; }
+    text-align: center;
+    padding-top: 10px; }
+    @media screen and (min-width: 768px) {
+      .footerSection .footerLogo {
+        flex: 1;
+        padding-top: 0; } }
     .footerSection .footerLogo img {
       width: 100px; }
   .footerSection .socialIcons {
-    flex: 1;
-    font-size: 20px;
-    text-align: center; }
+    font-size: 16px;
+    text-align: center;
+    padding: 10px; }
+    @media screen and (min-width: 768px) {
+      .footerSection .socialIcons {
+        flex: 1;
+        font-size: 20px; } }
     .footerSection .socialIcons .fa {
       margin-left: 5px;
       color: #000; }
@@ -137,12 +303,16 @@
         cursor: pointer;
         opacity: 0.7; }
   .footerSection .contactFooter {
-    flex: 1;
     text-align: center;
-    line-height: 1.2em; }
+    line-height: 1.2em;
+    padding-bottom: 10px; }
+    @media screen and (min-width: 768px) {
+      .footerSection .contactFooter {
+        flex: 1;
+        font-size: 16px; } }
     .footerSection .contactFooter a {
       color: #000;
-      font-size: 16px;
+      font-size: 12px;
       text-decoration: none; }
       .footerSection .contactFooter a:hover {
         cursor: pointer;
@@ -202,7 +372,7 @@
 
 .menu-panel {
   position: absolute;
-  top: 80px;
+  top: 60px;
   width: 100%;
   padding: 10px 0;
   background-color: rgba(254, 208, 83, 0.7);
@@ -226,30 +396,80 @@
 .expand {
   display: block; }
 
-#product {
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .wrapper #productImageContainer {
+      width: 50%; }
+    .wrapper #productInformationContainer {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      margin: auto; } }
+
+.wrapper #productInformationContainer {
+  margin: 50px 0px; }
+
+#productImageContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px; }
-  #product img {
-    width: 60%;
-    height: 60%; }
-  #product p:first-of-type {
-    padding-top: 20px; }
+  margin-top: 20px; }
+  #productImageContainer img {
+    width: 80%;
+    height: 80%; }
+    @media screen and (min-width: 768px) {
+      #productImageContainer img {
+        width: 70%;
+        height: 75%; } }
+
+#productInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  @media screen and (min-width: 768px) {
+    #productInfo {
+      align-items: flex-start; } }
+  #productInfo h3 {
+    font-size: 25px;
+    font-weight: normal; }
+    @media screen and (min-width: 768px) {
+      #productInfo h3 {
+        font-size: 40px; } }
+  #productInfo p:first-of-type {
+    padding-bottom: 20px; }
+  #productInfo p {
+    font-size: 18px; }
+    @media screen and (min-width: 768px) {
+      #productInfo p {
+        font-size: 22px; } }
 
 hr {
-  border-top: 1px solid #8c8b8b;
-  width: 80%;
-  margin: auto; }
+  border-top: 1px solid #b8b4b4;
+  width: 90%;
+  margin: 20px; }
+  @media screen and (min-width: 768px) {
+    hr {
+      margin: 20px 0px;
+      width: 80%; } }
 
 #addToCartDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-left: 10%;
-  margin-top: 20px; }
+  margin-left: 10%; }
+  @media screen and (min-width: 768px) {
+    #addToCartDiv {
+      margin: 0;
+      width: 80%; }
+      #addToCartDiv label {
+        font-size: 18px; } }
   #addToCartDiv div input {
     width: 15%;
     margin: 10px; }
@@ -278,114 +498,146 @@ hr {
     text-decoration: none;
     padding: 5px;
     width: 90%;
-    font-size: 14px;
-    margin-bottom: 20px; }
+    font-size: 14px; }
+    @media screen and (min-width: 768px) {
+      #addToCartDiv .addToCartButton {
+        width: 100%;
+        font-size: 16px; } }
 
-#info {
+#infoTable {
   margin: 20px;
   display: flex;
   justify-content: center; }
-  #info table {
+  @media screen and (min-width: 768px) {
+    #infoTable {
+      margin: 20px 0px 10px 0px;
+      width: 80%; } }
+  #infoTable table {
     border-collapse: collapse;
     width: 100%; }
-    #info table td,
-    #info table th {
+    #infoTable table td,
+    #infoTable table th {
       border: 1px solid #dddddd;
       text-align: center;
       padding: 8px; }
 
-#about {
+#aboutBeer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 30px; }
+  #aboutBeer h1 {
+    font-size: 25px;
+    padding-bottom: 15px; }
+  #aboutBeer p {
+    line-height: 25px; }
+  @media screen and (min-width: 768px) {
+    #aboutBeer {
+      margin: 50px 0px 0px 0px;
+      width: 80%; } }
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  #wrapper .headerContent {
+    background-image: url("../Pictures/beerology-startsida.jpg");
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%; }
+    #wrapper .headerContent .headerText {
+      background: rgba(0, 0, 0, 0.2);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 35px;
+      text-align: center; }
+      #wrapper .headerContent .headerText h1 {
+        padding-bottom: 10px; }
+        @media screen and (min-width: 768px) {
+          #wrapper .headerContent .headerText h1 {
+            font-size: 100px; } }
+      #wrapper .headerContent .headerText p {
+        padding-bottom: 200px; }
+    #wrapper .headerContent .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 250px; }
+      #wrapper .headerContent .btn-container .button {
+        background-color: #f7d36e;
+        border: 1px solid #f5b301;
+        border-radius: 20px;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 15px 32px;
+        font-size: 18px;
+        margin: 4px 2px; }
+        #wrapper .headerContent .btn-container .button:hover, #wrapper .headerContent .btn-container .button:active {
+          opacity: 0.8; }
+
+#ThkYouWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  #ThkYouWrapper .orderPayedHeader {
+    background-image: url("../Pictures/beerology-order.jpeg");
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 100%; }
+    #ThkYouWrapper .orderPayedHeader .orderPayedText {
+      background: rgba(0, 0, 0, 0.2);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      line-height: 2em; }
+      #ThkYouWrapper .orderPayedHeader .orderPayedText h3 {
+        font-size: 30px; }
+      #ThkYouWrapper .orderPayedHeader .orderPayedText p {
+        font-size: 20px;
+        font-weight: 600; }
+    #ThkYouWrapper .orderPayedHeader div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 130px; }
+      #ThkYouWrapper .orderPayedHeader div .button {
+        background-color: #f7d36e;
+        border: 1px solid #f5b301;
+        border-radius: 20px;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        padding: 15px 32px;
+        font-size: 18px;
+        margin: 4px 2px; }
+        #ThkYouWrapper .orderPayedHeader div .button:hover, #ThkYouWrapper .orderPayedHeader div .button:active {
+          opacity: 0.8; }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Courier New", Courier, monospace; }
-
-.headerContent {
-  background-image: url("../Pictures/beerology-startsida.jpg");
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
-  height: 100vh; }
-  .headerContent .headerText {
-    background: rgba(0, 0, 0, 0.2);
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 35px;
-    text-align: center; }
-    .headerContent .headerText h1 {
-      padding-bottom: 10px; }
-    .headerContent .headerText p {
-      padding-bottom: 200px; }
-  .headerContent .btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 350px; }
-    .headerContent .btn-container .button {
-      background-color: #f7d36e;
-      border: 1px solid #f5b301;
-      border-radius: 20px;
-      color: black;
-      text-align: center;
-      cursor: pointer;
-      display: inline-block;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 15px 32px;
-      font-size: 18px;
-      margin: 4px 2px; }
-
-* {
-  margin: 0;
-  padding: 0; }
-
-.orderPayedHeader {
-  background-image: url("../Pictures/beerology-order.jpeg");
-  background-position: center top;
-  background-size: cover;
-  width: 100%;
-  height: 100vh; }
-  .orderPayedHeader .orderPayedText {
-    background: rgba(0, 0, 0, 0.2);
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 45px;
-    text-align: center;
-    line-height: 100px; }
-  .orderPayedHeader div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 130px; }
-    .orderPayedHeader div .button {
-      background-color: #f7d36e;
-      border: 1px solid #f5b301;
-      border-radius: 20px;
-      color: black;
-      text-align: center;
-      cursor: pointer;
-      display: inline-block;
-      text-decoration: none;
-      padding: 15px 32px;
-      font-size: 18px;
-      margin: 4px 2px; }

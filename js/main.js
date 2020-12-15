@@ -11,7 +11,7 @@ $(function () {
   });
   $(".headerText").hide().fadeIn(2000);
   // Loopar genom cart on load
-  $.each(cart, (i, carItm) => {
+  $.each(cart, (i, cartItm) => {
     renderCart();
   });
 });
@@ -31,14 +31,13 @@ function addToCart(product) {
   if (x == 0) {
     product.inCart++;
     cart.push(product);
-    console.log("addtocart", product);
   }
 
   saveToLS();
   renderCart();
 }
 function renderCart() {
-  document.getElementById("cart").innerHTML = " ";
+  $("#cart").html(" ");
 
   $("<h3>").html("My Shopping Cart:").appendTo($("#cart"));
 
@@ -97,7 +96,12 @@ function renderCart() {
       .appendTo($cartCard);
     $cartCard.appendTo($("#cart"));
   }
-  // skapar total price diven - own function later.
+
+  showTotalPrice();
+  calcProducts();
+}
+
+function showTotalPrice() {
   $totalPrice = $("<div>");
   $totalPrice.addClass("totalprice");
 
@@ -107,16 +111,21 @@ function renderCart() {
   $("<span>")
     .html("$" + calcTotal())
     .appendTo($totalPrice);
-  $totalPrice.appendTo("#cart");
 
   $("<button>")
     .attr("type", "button")
     .attr("id", "checkoutBtn")
     .html("Checkout")
+    .on("click", function () {
+      if (window.location.href.indexOf("index.html") > -1) {
+        window.location.assign("HTML/checkoutPage.html");
+      } else {
+        window.location.assign("../HTML/checkoutPage.html");
+      }
+    })
     .appendTo("#cart");
-
-  calcProducts();
 }
+
 function calcTotal() {
   let totalCost = 0;
 
@@ -143,6 +152,7 @@ function remove(product) {
   calcTotal();
   calcProducts();
   renderCart();
+  checkoutRender();
   saveToLS();
 }
 function saveToLS() {
@@ -153,9 +163,11 @@ function decreaseProducts(currentProduct) {
   currentProduct.inCart--;
   saveToLS();
   renderCart();
+  checkoutRender();
   if (currentProduct.inCart === 0) {
     remove(currentProduct);
     renderCart();
+    checkoutRender();
   }
 }
 
@@ -163,10 +175,12 @@ function increaseProducts(currentProduct) {
   currentProduct.inCart++;
   saveToLS();
   renderCart();
+  checkoutRender();
 }
 
 function changeInCartValue(inputValue, currentProduct) {
   currentProduct.inCart = inputValue;
   saveToLS();
   renderCart();
+  checkoutRender();
 }
