@@ -355,30 +355,80 @@
 .expand {
   display: block; }
 
-#product {
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .wrapper #productImageContainer {
+      width: 50%; }
+    .wrapper #productInformationContainer {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      margin: auto; } }
+
+.wrapper #productInformationContainer {
+  margin: 50px 0px; }
+
+#productImageContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px; }
-  #product img {
-    width: 60%;
-    height: 60%; }
-  #product p:first-of-type {
-    padding-top: 20px; }
+  margin-top: 20px; }
+  #productImageContainer img {
+    width: 80%;
+    height: 80%; }
+    @media screen and (min-width: 768px) {
+      #productImageContainer img {
+        width: 70%;
+        height: 75%; } }
+
+#productInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  @media screen and (min-width: 768px) {
+    #productInfo {
+      align-items: flex-start; } }
+  #productInfo h3 {
+    font-size: 25px;
+    font-weight: normal; }
+    @media screen and (min-width: 768px) {
+      #productInfo h3 {
+        font-size: 40px; } }
+  #productInfo p:first-of-type {
+    padding-bottom: 20px; }
+  #productInfo p {
+    font-size: 18px; }
+    @media screen and (min-width: 768px) {
+      #productInfo p {
+        font-size: 22px; } }
 
 hr {
-  border-top: 1px solid #8c8b8b;
-  width: 80%;
-  margin: auto; }
+  border-top: 1px solid #b8b4b4;
+  width: 90%;
+  margin: 20px; }
+  @media screen and (min-width: 768px) {
+    hr {
+      margin: 20px 0px;
+      width: 80%; } }
 
 #addToCartDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-left: 10%;
-  margin-top: 20px; }
+  margin-left: 10%; }
+  @media screen and (min-width: 768px) {
+    #addToCartDiv {
+      margin: 0;
+      width: 80%; }
+      #addToCartDiv label {
+        font-size: 18px; } }
   #addToCartDiv div input {
     width: 15%;
     margin: 10px; }
@@ -407,28 +457,44 @@ hr {
     text-decoration: none;
     padding: 5px;
     width: 90%;
-    font-size: 14px;
-    margin-bottom: 20px; }
+    font-size: 14px; }
+    @media screen and (min-width: 768px) {
+      #addToCartDiv .addToCartButton {
+        width: 100%;
+        font-size: 16px; } }
 
-#info {
+#infoTable {
   margin: 20px;
   display: flex;
   justify-content: center; }
-  #info table {
+  @media screen and (min-width: 768px) {
+    #infoTable {
+      margin: 20px 0px 10px 0px;
+      width: 80%; } }
+  #infoTable table {
     border-collapse: collapse;
     width: 100%; }
-    #info table td,
-    #info table th {
+    #infoTable table td,
+    #infoTable table th {
       border: 1px solid #dddddd;
       text-align: center;
       padding: 8px; }
 
-#about {
+#aboutBeer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 30px; }
+  #aboutBeer h1 {
+    font-size: 25px;
+    padding-bottom: 15px; }
+  #aboutBeer p {
+    line-height: 25px; }
+  @media screen and (min-width: 768px) {
+    #aboutBeer {
+      margin: 50px 0px 0px 0px;
+      width: 80%; } }
 
 * {
   margin: 0;

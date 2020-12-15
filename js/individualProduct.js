@@ -6,13 +6,13 @@ function renderProduct() {
 
   if (productItem !== 0) {
     $("title").html(productItem.name);
-    let product = $("#product");
-    $("<img>").attr("src", productItem.image).appendTo(product);
-    $("<p>").html(productItem.name).appendTo(product);
-    $("<p>").html(productItem.type).appendTo(product);
+    let productImage = $("#productImageContainer");
+    $("<img>").attr("src", productItem.image).appendTo(productImage);
+    $("<h3>").html(productItem.name).appendTo($("#productInfo"));
+    $("<p>").html(productItem.type).appendTo($("#productInfo"));
     $("<p>")
       .html("$" + productItem.price)
-      .appendTo(product);
+      .appendTo($("#productInfo"));
     addProductToCart(productItem);
     createTable(productItem);
     descriptionPart(productItem);
@@ -75,7 +75,7 @@ function quanitityToCart(product) {
   renderCart();
 }
 function createTable(productItem) {
-  let infoDiv = $("#info");
+  let infoDiv = $("#infoTable");
   let table = $("<table>");
   let tableRow1 = $("<tr>");
   $("<th>").html("SIZE").appendTo(tableRow1);
@@ -90,8 +90,10 @@ function createTable(productItem) {
   table.appendTo(infoDiv);
 }
 function descriptionPart(productItem) {
-  let about = $("#about");
-  $("<h1>").html(productItem.name).appendTo(about);
+  let about = $("#aboutBeer");
+  $("<h1>")
+    .html("About " + productItem.name)
+    .appendTo(about);
   $("<p>").html(productItem.description).appendTo(about);
 }
 function increaseQuantity() {
