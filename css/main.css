@@ -11,11 +11,14 @@
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 40vh; }
+  height: 20vh; }
+  @media screen and (min-width: 768px) {
+    .allBeersHeader {
+      height: 40vh; } }
   .allBeersHeader .allBeersText {
     background: rgba(255, 255, 255, 0.2);
     width: 100%;
-    height: 40vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,6 +51,9 @@
       @media screen and (min-width: 768px) {
         #allBeersContainer .individualBeerContainer img {
           width: 70%; } }
+      #allBeersContainer .individualBeerContainer img:hover, #allBeersContainer .individualBeerContainer img:active {
+        cursor: pointer;
+        opacity: 0.8; }
     #allBeersContainer .individualBeerContainer p:first-of-type {
       padding-bottom: 10px;
       font-size: 14px;
@@ -75,6 +81,12 @@
   text-decoration: none;
   margin-top: 5px;
   padding: 3px 25px; }
+  @media screen and (min-width: 768px) {
+    #addToCartBtn {
+      padding: 8px 25px; } }
+  #addToCartBtn:hover, #addToCartBtn:active {
+    opacity: 0.8;
+    font-weight: 600; }
 
 #cart {
   border: 2px solid #111;
@@ -137,6 +149,9 @@
     text-decoration: none;
     padding: 5px;
     width: 100%; }
+    #cart #checkoutBtn:hover, #cart #checkoutBtn:active {
+      opacity: 0.8;
+      font-weight: 600; }
 
 .checkoutPage {
   display: flex;
@@ -316,7 +331,7 @@
 
 .menu-panel {
   position: absolute;
-  top: 80px;
+  top: 60px;
   width: 100%;
   padding: 10px 0;
   background-color: rgba(254, 208, 83, 0.7);
@@ -420,50 +435,56 @@ hr {
   padding: 0;
   font-family: "Courier New", Courier, monospace; }
 
-.headerContent {
-  background-image: url("../Pictures/beerology-startsida.jpg");
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
+#wrapper {
+  display: flex;
+  flex-direction: column;
   height: 100vh; }
-  .headerContent .headerText {
-    background: rgba(0, 0, 0, 0.2);
-    top: 0;
+  #wrapper .headerContent {
+    background-image: url("../Pictures/beerology-startsida.jpg");
+    background-position: center center;
+    background-size: cover;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 35px;
-    text-align: center; }
-    .headerContent .headerText h1 {
-      padding-bottom: 10px; }
-      @media screen and (min-width: 768px) {
-        .headerContent .headerText h1 {
-          font-size: 100px; } }
-    .headerContent .headerText p {
-      padding-bottom: 200px; }
-  .headerContent .btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 350px; }
-    .headerContent .btn-container .button {
-      background-color: #f7d36e;
-      border: 1px solid #f5b301;
-      border-radius: 20px;
-      color: black;
-      text-align: center;
-      cursor: pointer;
-      display: inline-block;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 15px 32px;
-      font-size: 18px;
-      margin: 4px 2px; }
+    height: 100%; }
+    #wrapper .headerContent .headerText {
+      background: rgba(0, 0, 0, 0.2);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 35px;
+      text-align: center; }
+      #wrapper .headerContent .headerText h1 {
+        padding-bottom: 10px; }
+        @media screen and (min-width: 768px) {
+          #wrapper .headerContent .headerText h1 {
+            font-size: 100px; } }
+      #wrapper .headerContent .headerText p {
+        padding-bottom: 200px; }
+    #wrapper .headerContent .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 250px; }
+      #wrapper .headerContent .btn-container .button {
+        background-color: #f7d36e;
+        border: 1px solid #f5b301;
+        border-radius: 20px;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 15px 32px;
+        font-size: 18px;
+        margin: 4px 2px; }
+        #wrapper .headerContent .btn-container .button:hover, #wrapper .headerContent .btn-container .button:active {
+          opacity: 0.8; }
 
 * {
   margin: 0;
