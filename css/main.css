@@ -156,16 +156,33 @@
 .checkoutPage {
   display: flex;
   flex-direction: column;
-  justify-content: start; }
+  justify-content: start;
+  align-items: center;
+  position: relative; }
+  .checkoutPage h2 {
+    text-transform: uppercase;
+    font-size: 30px;
+    order: -1;
+    position: absolute;
+    top: 30px; }
+  @media screen and (min-width: 768px) {
+    .checkoutPage {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start; } }
   .checkoutPage .cartContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; }
-    .checkoutPage .cartContainer h2 {
-      margin: 30px 0px;
-      text-transform: uppercase;
-      font-size: 30px; }
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 20px; }
+    @media screen and (min-width: 768px) {
+      .checkoutPage .cartContainer {
+        width: 40%;
+        margin-bottom: 50px;
+        margin-right: 20px; } }
     .checkoutPage .cartContainer .productContainer {
       display: flex;
       align-items: center;
@@ -175,54 +192,75 @@
         margin-top: 15px;
         padding: 10px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(127, 127, 127, 0.1); }
         .checkoutPage .cartContainer .productContainer .productCard .productCardImg {
-          width: 50%; }
-          .checkoutPage .cartContainer .productContainer .productCard .productCardImg img {
-            width: 100%;
-            height: 100%; }
+          width: 25%; }
+        .checkoutPage .cartContainer .productContainer .productCard button {
+          background-color: #f7d36e;
+          border: 1px solid #f5b301;
+          border-radius: 20px;
+          color: black;
+          text-align: center;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+          width: 15px;
+          border-radius: 2px; }
         .checkoutPage .cartContainer .productContainer .productCard input {
-          width: 20%; }
-        .checkoutPage .cartContainer .productContainer .productCard span:hover {
+          width: 25px; }
+        .checkoutPage .cartContainer .productContainer .productCard .fa-trash:hover {
           cursor: pointer; }
     .checkoutPage .cartContainer hr {
       margin-top: 40px;
       margin-bottom: 15px; }
     .checkoutPage .cartContainer .cartTotal {
-      width: 80%;
+      width: 70%;
       margin-top: 10px;
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: bold; }
+      @media screen and (min-width: 768px) {
+        .checkoutPage .cartContainer .cartTotal {
+          font-size: 20px; } }
   .checkoutPage .formContainer {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media screen and (min-width: 768px) {
+      .checkoutPage .formContainer {
+        max-width: 40%;
+        margin-top: 100px; } }
     .checkoutPage .formContainer form {
       width: 80%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
       margin-bottom: 20px; }
+      .checkoutPage .formContainer form label {
+        margin: 5px 10px 5px 0; }
     .checkoutPage .formContainer button {
-      background-color: #fed053;
+      background-color: #f7d36e;
       border: 1px solid #f5b301;
-      color: black;
       border-radius: 20px;
-      padding: 5px;
-      width: 90%;
+      color: black;
       text-align: center;
-      text-decoration: none;
+      cursor: pointer;
       display: inline-block;
+      text-decoration: none;
+      padding: 8px 14px;
       font-size: 14px;
-      margin-bottom: 20px;
-      cursor: pointer; }
+      margin-bottom: 20px; }
+      @media screen and (min-width: 768px) {
+        .checkoutPage .formContainer button {
+          font-size: 16px; } }
 
 .footerSection {
   background-color: #fed053;
