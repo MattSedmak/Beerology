@@ -117,7 +117,11 @@ function showTotalPrice() {
     .attr("id", "checkoutBtn")
     .html("Checkout")
     .on("click", function () {
-      window.location.assign("../HTML/checkoutPage.html");
+      if (window.location.href.indexOf("index.html") > -1) {
+        window.location.assign("HTML/checkoutPage.html");
+      } else {
+        window.location.assign("../HTML/checkoutPage.html");
+      }
     })
     .appendTo("#cart");
 }
