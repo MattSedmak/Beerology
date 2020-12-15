@@ -1,11 +1,5 @@
 @import "../Tools/mixins";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .allBeersHeader {
   background-image: url("../Pictures/rhett-wesley-beerBottles-unsplash.jpg");
   background-position: center center;
@@ -45,8 +39,6 @@
     @include desktops {
       max-width: 22%;
     }
-
-    // @include center;
     padding: 20px 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
     margin: 10px;
