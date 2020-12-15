@@ -56,5 +56,10 @@
     @include buttons;
     padding: 5px;
     width: 100%;
+    &:hover,
+    &:active {
+      opacity: 0.8;
+      font-weight: 600;
+    }
   }
 }
