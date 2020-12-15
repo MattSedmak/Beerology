@@ -4,12 +4,13 @@ $(function () {
 });
 
 function checkoutRender() {
+  $("<h2>").html("Checkout").appendTo($(".checkoutPage"));
+  
   let cartContainer = $(".cartContainer");
   cartContainer.html("");
   let productContainer = $("<div>").addClass("productContainer");
   let cartTotal = $("<div>").addClass("cartTotal");
 
-  $("<h2>").html("Checkout").appendTo(cartContainer);
 
   for (let i = 0; i < cart.length; i++) {
     console.log(cart[i].inCart);
@@ -80,14 +81,14 @@ function customerForm() {
     window.location.assign("../HTML/thankYouPage.html");
   });
 
-  $("<label>").attr("for", "fName").html("Firstname:").appendTo(form);
+  $("<label>").attr("for", "fName").html("First Name:").appendTo(form);
   $("<input>")
     .attr("type", "text")
     .attr("id", "fName")
     .prop("required", true)
     .appendTo(form);
 
-  $("<label>").attr("for", "lName").html("Lastname:").appendTo(form);
+  $("<label>").attr("for", "lName").html("Last Name:").appendTo(form);
   $("<input>")
     .attr("type", "text")
     .attr("id", "lName")

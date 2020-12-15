@@ -3,6 +3,23 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
+    align-items: center;
+    position: relative;
+    h2 {
+        // margin: 30px 0px;
+        text-transform: uppercase;
+        font-size: 30px;
+        order: -1;
+        position: absolute;
+        top: 30px;
+    }
+
+    @include desktops {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
 
     .cartContainer {
         width: 100%;
@@ -10,42 +27,53 @@
         flex-direction: column;
         // justify-content: space-evenly;
         align-items: center;
+        margin-top: 80px;
+        margin-bottom: 20px;
 
-        h2 {
-            margin: 30px 0px;
-            text-transform: uppercase;
-            font-size: 30px;
+        @include desktops {
+            width: 40%;
+            margin-bottom: 50px;
+            margin-right: 20px;
         }
+        
 
         .productContainer {
             // margin: 50px 0px;
             display: flex;
             align-items: center;
             flex-direction: column;
+            @include desktops {
+                // width: 50%;
+            }
 
             .productCard {
                 width: 95%;
                 margin-top: 15px;
                 padding: 10px;
                 display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
+                justify-content: space-between;
                 align-items: center;
                 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(127, 127, 127, 0.1);
 
                 .productCardImg {
-                    width: 50%;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
+                    width: 25%;
+                    // img {
+                    //     width: 100%;
+                    //     height: 100%;
+                    // }
+                }
+
+                button {
+                    @include buttons; 
+                    width: 15px;
+                    border-radius: 2px;
                 }
 
                 input {
-                    width: 20%;
+                    width: 25px;
                 }
 
-                span:hover {
+                .fa-trash:hover {
                     cursor: pointer;
                 }
             }
@@ -56,42 +84,53 @@
             margin-bottom: 15px;
         }
         .cartTotal {
-            width: 80%;
+            width: 70%;
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+
+            @include desktops {
+                font-size: 20px;
+            }
         }
     }
     .formContainer {
         width: 100%;
-        margin-top: 30px;
+        margin-top: 25px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
+        @include desktops {
+            max-width: 40%;
+            margin-top: 100px;
+        }
         form {
             width: 80%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+
+            label {
+                margin: 5px 10px 5px 0;
+            }
         }
 
         button {
-            background-color: #fed053;
-            border: 1px solid #f5b301;
-            color: black;
-            border-radius: 20px;
-            padding: 5px;
-            width: 90%;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
+            @include buttons;
+            padding: 8px 14px;
             font-size: 14px;
             margin-bottom: 20px;
-            cursor: pointer;
+
+            @include desktops {
+                font-size: 16px;
+            }
         }
     }
 }
