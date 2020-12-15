@@ -4,7 +4,7 @@ $(function () {
 
 function orderConfirmation() {
   let firstname = JSON.parse(sessionStorage.getItem("customerInfo")) || [];
-  console.log(firstname);
+
   let orderNumb = Math.round(Math.random() * 100000);
   $("<p>").html(firstname).appendTo(".orderPayedText");
   $("<p>")
