@@ -11,7 +11,7 @@ $(function () {
   });
   $(".headerText").hide().fadeIn(2000);
   // Loopar genom cart on load
-  $.each(cart, (i, carItm) => {
+  $.each(cart, (i, cartItm) => {
     renderCart();
   });
 });
@@ -31,15 +31,13 @@ function addToCart(product) {
   if (x == 0) {
     product.inCart++;
     cart.push(product);
-    console.log("addtocart", product);
   }
 
   saveToLS();
   renderCart();
 }
 function renderCart() {
-  document.getElementById("cart").innerHTML = " ";
-  console.log(cart);
+  $("#cart").html(" ");
 
   $("<h3>").html("My Shopping Cart:").appendTo($("#cart"));
 
@@ -98,7 +96,12 @@ function renderCart() {
       .appendTo($cartCard);
     $cartCard.appendTo($("#cart"));
   }
-  // skapar total price diven - own function later.
+
+  showTotalPrice();
+  calcProducts();
+}
+
+function showTotalPrice() {
   $totalPrice = $("<div>");
   $totalPrice.addClass("totalprice");
 
@@ -108,20 +111,17 @@ function renderCart() {
   $("<span>")
     .html("$" + calcTotal())
     .appendTo($totalPrice);
-  $totalPrice.appendTo("#cart");
 
   $("<button>")
     .attr("type", "button")
     .attr("id", "checkoutBtn")
     .html("Checkout")
     .on("click", function () {
-      //fix from homepage
       window.location.assign("../HTML/checkoutPage.html");
     })
     .appendTo("#cart");
-
-  calcProducts();
 }
+
 function calcTotal() {
   let totalCost = 0;
 
@@ -172,13 +172,11 @@ function increaseProducts(currentProduct) {
   saveToLS();
   renderCart();
   checkoutRender();
-  console.log("Tryck plus");
 }
 
 function changeInCartValue(inputValue, currentProduct) {
   currentProduct.inCart = inputValue;
   saveToLS();
   renderCart();
-  console.log("Kom in");
   checkoutRender();
 }
