@@ -2,7 +2,7 @@ $(function () {
   // Hambuger toggle
   $(".menu-btn").on("click", function () {
     $(".menu-btn").toggleClass("active");
-    $(".menu-panel").toggle("fade").toggleClass("expand");
+    $(".menu-panel").toggleClass("expand");
   });
 
   // Shopping cart toggle
@@ -10,10 +10,9 @@ $(function () {
     $("#cart").toggle("drop right");
   });
   $(".headerText").hide().fadeIn(2000);
-  // Loopar genom cart on load
-  $.each(cart, (i, cartItm) => {
-    renderCart();
-  });
+  $(".btn-container").hide().fadeIn(2000);
+
+  renderCart();
 });
 
 let cart = JSON.parse(localStorage.getItem("cartItems")) || [];

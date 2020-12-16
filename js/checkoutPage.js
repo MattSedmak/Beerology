@@ -5,12 +5,11 @@ $(function () {
 
 function checkoutRender() {
   $("<h2>").html("Checkout").appendTo($(".checkoutPage"));
-  
+
   let cartContainer = $(".cartContainer");
   cartContainer.html("");
   let productContainer = $("<div>").addClass("productContainer");
   let cartTotal = $("<div>").addClass("cartTotal");
-
 
   for (let i = 0; i < cart.length; i++) {
     let productCard = $("<div>").addClass("productCard");
