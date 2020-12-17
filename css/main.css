@@ -152,6 +152,8 @@
       font-weight: 600; }
 
 .checkoutPage {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -163,12 +165,6 @@
     order: -1;
     position: absolute;
     top: 30px; }
-  @media screen and (min-width: 768px) {
-    .checkoutPage {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start; } }
   .checkoutPage .cartContainer {
     width: 100%;
     display: flex;
@@ -176,11 +172,6 @@
     align-items: center;
     margin-top: 80px;
     margin-bottom: 20px; }
-    @media screen and (min-width: 768px) {
-      .checkoutPage .cartContainer {
-        width: 40%;
-        margin-bottom: 50px;
-        margin-right: 20px; } }
     .checkoutPage .cartContainer .productContainer {
       display: flex;
       align-items: center;
@@ -193,6 +184,11 @@
         justify-content: space-between;
         align-items: center;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(127, 127, 127, 0.1); }
+        @media screen and (min-width: 768px) {
+          .checkoutPage .cartContainer .productContainer .productCard {
+            width: 50%; }
+            .checkoutPage .cartContainer .productContainer .productCard .fa-trash {
+              margin-right: 15px; } }
         .checkoutPage .cartContainer .productContainer .productCard .productCardImg {
           width: 25%; }
         .checkoutPage .cartContainer .productContainer .productCard button {
@@ -222,6 +218,7 @@
       font-weight: bold; }
       @media screen and (min-width: 768px) {
         .checkoutPage .cartContainer .cartTotal {
+          width: 40%;
           font-size: 20px; } }
   .checkoutPage .formContainer {
     width: 100%;
@@ -230,12 +227,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    @media screen and (min-width: 768px) {
-      .checkoutPage .formContainer {
-        max-width: 40%;
-        margin-top: 100px; } }
     .checkoutPage .formContainer form {
-      width: 80%;
+      max-width: 300px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -244,21 +237,27 @@
       margin-bottom: 20px; }
       .checkoutPage .formContainer form label {
         margin: 5px 10px 5px 0; }
-    .checkoutPage .formContainer button {
-      background-color: #f7d36e;
-      border: 1px solid #f5b301;
-      border-radius: 20px;
-      color: black;
-      text-align: center;
-      cursor: pointer;
-      display: inline-block;
-      text-decoration: none;
-      padding: 8px 14px;
-      font-size: 14px;
+    .checkoutPage .formContainer #formButtonDiv {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
       margin-bottom: 20px; }
-      @media screen and (min-width: 768px) {
-        .checkoutPage .formContainer button {
-          font-size: 16px; } }
+      .checkoutPage .formContainer #formButtonDiv button {
+        background-color: #f7d36e;
+        border: 1px solid #f5b301;
+        border-radius: 20px;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        padding: 8px 14px;
+        font-size: 16px; }
+        @media screen and (min-width: 768px) {
+          .checkoutPage .formContainer #formButtonDiv button {
+            font-size: 16px; } }
 
 .footerSection {
   background-color: #fed053;

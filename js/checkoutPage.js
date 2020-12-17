@@ -1,11 +1,10 @@
 $(function () {
+  $("<h2>").html("Checkout").appendTo($(".checkoutPage"));
   checkoutRender();
   customerForm();
 });
 
 function checkoutRender() {
-  $("<h2>").html("Checkout").appendTo($(".checkoutPage"));
-
   let cartContainer = $(".cartContainer");
   cartContainer.html("");
   let productContainer = $("<div>").addClass("productContainer");
@@ -95,7 +94,14 @@ function customerForm() {
     .prop("required", true)
     .appendTo(form);
 
-  $("<button>").attr("type", "submit").html("Purchase").appendTo(form);
+  let = formButtonDiv = $("<div>")
+    .attr("id", "formButtonDiv")
+    .appendTo(form);
+
+  $("<button>")
+    .attr("type", "submit")
+    .html("Purchase").appendTo(formButtonDiv);
+  
   form.appendTo(formContainer);
 }
 
