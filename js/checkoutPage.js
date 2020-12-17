@@ -31,11 +31,6 @@ function checkoutRender() {
     $("<input>")
       .attr("type", "text")
       .attr("value", cart[i].inCart)
-      // .on("keypress", function (e) {
-      //   if (e.keyCode === 13 || e.key === 13) {
-      //     changeInCartValue($(this).val(), cart[i]);
-      //   }
-      // })
       .appendTo(productCard);
 
     $("<button>")

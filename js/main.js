@@ -18,16 +18,16 @@ $(function () {
 let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 function addToCart(product) {
-  let x = 0;
+  let isProductInCart = 0;
 
   for (let i = 0; i < cart.length; i++) {
     if (product.id === cart[i].id) {
       cart[i].inCart++;
-      x++;
+      isProductInCart++;
     }
   }
 
-  if (x == 0) {
+  if (isProductInCart == 0) {
     product.inCart++;
     cart.push(product);
   }
@@ -178,7 +178,7 @@ function increaseProducts(currentProduct) {
 }
 
 function changeInCartValue(inputValue, currentProduct) {
-  currentProduct.inCart = inputValue;
+  currentProduct.inCart = parseInt(inputValue);
   saveToLS();
   renderCart();
   checkoutRender();

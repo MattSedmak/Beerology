@@ -39,6 +39,11 @@ function addProductToCart(productItem) {
     .attr("value", "1")
     .attr("id", "amountOfBeer")
     .attr("name", "amountOfBeer")
+    .on("keypress", function (e) {
+      if (e.keyCode === 13 || e.key === 13) {
+        quanitityToCart(productItem);
+      }
+    })
     .appendTo(amount);
   $("<button>")
     .attr("type", "button")
