@@ -9,7 +9,6 @@ function checkoutRender() {
   let cartContainer = $(".cartContainer");
   cartContainer.html("");
   let productContainer = $("<div>").addClass("productContainer");
-  let cartTotal = $("<div>").addClass("cartTotal");
 
   for (let i = 0; i < cart.length; i++) {
     let productCard = $("<div>").addClass("productCard");
@@ -53,15 +52,21 @@ function checkoutRender() {
     productCard.appendTo(productContainer);
     productContainer.appendTo(cartContainer);
   }
-
   $("<hr>").appendTo(productContainer);
 
-  cartTotal.appendTo(cartContainer);
+  checkoutTotal();
+  saveToLS();
+}
+
+function checkoutTotal() {
+  let cartTotal = $("<div>").addClass("cartTotal");
+
   $("<p>").html("Total:").appendTo(cartTotal);
   $("<p>").html(calcProducts()).appendTo(cartTotal);
   $("<p>")
     .html("$" + calcTotal())
     .appendTo(cartTotal);
+  cartTotal.appendTo($(".cartContainer"));
   saveToLS();
 }
 
