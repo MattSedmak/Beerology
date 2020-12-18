@@ -4,9 +4,10 @@ $(function () {
   customerForm();
 });
 
+// Creates the chcekout html with products.
 function checkoutRender() {
-  let cartContainer = $(".cartContainer");
-  cartContainer.html("");
+  let checkoutContainer = $(".checkoutContainer");
+  checkoutContainer.html("");
   let productContainer = $("<div>").addClass("productContainer");
 
   for (let i = 0; i < cart.length; i++) {
@@ -39,7 +40,9 @@ function checkoutRender() {
       })
       .appendTo(productCard);
 
-    $("<span>").html("$" + cart[i].price).appendTo(productCard);
+    $("<span>")
+      .html("$" + cart[i].price)
+      .appendTo(productCard);
     $("<span>")
       .html("<i class='fas fa-trash'></i>")
       .on("click", function (e) {
@@ -49,16 +52,16 @@ function checkoutRender() {
       .appendTo(productCard);
 
     productCard.appendTo(productContainer);
-    productContainer.appendTo(cartContainer);
+    productContainer.appendTo(checkoutContainer);
   }
   $("<hr>").appendTo(productContainer);
 
   checkoutTotal();
   saveToLS();
 }
-
+// Creates the checkout totals section html.
 function checkoutTotal() {
-  let cartTotal = $("<div>").addClass("cartTotal");
+  let checkoutTotal = $("<div>").addClass("checkoutTotal");
 
   let table = $("<table>");
   let tableRow1 = $("<tr>");
@@ -68,15 +71,18 @@ function checkoutTotal() {
   let tableRow2 = $("<tr>");
   $("<td>").html("Total:").appendTo(tableRow2);
   $("<td>").html(calcProducts()).appendTo(tableRow2);
-  $("<td>").html("$" + calcTotal()).appendTo(tableRow2);
+  $("<td>")
+    .html("$" + calcTotal())
+    .appendTo(tableRow2);
   tableRow1.appendTo(table);
   tableRow2.appendTo(table);
-  table.appendTo(cartTotal);
+  table.appendTo(checkoutTotal);
 
-  cartTotal.appendTo($(".cartContainer"));
+  checkoutTotal.appendTo($(".checkoutContainer"));
   saveToLS();
 }
 
+// Sends customer payment information.
 function customerForm() {
   let form = $("form");
   form.on("submit", function (e) {

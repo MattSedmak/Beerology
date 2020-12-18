@@ -170,8 +170,8 @@ $(function () {
 
 function printBeer() {
   $.each(allBeers, (i, beer) => {
-    let $container = $("<div>");
-    $container.addClass("individualBeerContainer");
+    let container = $("<div>");
+    container.addClass("individualBeerContainer");
     $("<img>")
       .attr("src", beer.image)
       .attr("alt", beer.name + " bottle")
@@ -179,12 +179,12 @@ function printBeer() {
         saveToSS(e.data.b);
         window.location.assign("../HTML/singleProductPage.html");
       })
-      .appendTo($container);
-    $("<h3>").html(beer.name).appendTo($container);
-    $("<p>").html(beer.type).appendTo($container);
+      .appendTo(container);
+    $("<h3>").html(beer.name).appendTo(container);
+    $("<p>").html(beer.type).appendTo(container);
     $("<p>")
       .html("$" + beer.price)
-      .appendTo($container);
+      .appendTo(container);
     $("<button>")
       .attr("type", "button")
       .attr("id", "addToCartBtn")
@@ -192,8 +192,8 @@ function printBeer() {
       .on("click", { b: beer }, function (e) {
         addToCart(e.data.b);
       })
-      .appendTo($container);
-    $container.appendTo($("#allBeersContainer"));
+      .appendTo(container);
+    container.appendTo($("#allBeersContainer"));
   });
 }
 function saveToSS(theClickedProduct) {

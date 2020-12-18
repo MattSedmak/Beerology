@@ -17,6 +17,7 @@ $(function () {
 
 let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+// Adds a product to the shopping cart
 function addToCart(product) {
   let isProductInCart = 0;
 
@@ -26,15 +27,15 @@ function addToCart(product) {
       isProductInCart++;
     }
   }
-
   if (isProductInCart == 0) {
     product.inCart++;
     cart.push(product);
   }
-
   saveToLS();
   renderCart();
 }
+
+// Creates shopping cart html
 function renderCart() {
   $("#cart").html(" ");
 
@@ -42,19 +43,19 @@ function renderCart() {
 
   for (let i = 0; i < cart.length; i++) {
     let currentProduct = cart[i];
-    $cartCard = $("<div>");
-    $cartCard.addClass("cartCard");
+    cartCard = $("<div>");
+    cartCard.addClass("cartCard");
 
     if (window.location.href.indexOf("index.html") > -1) {
-      $("<img>").attr("src", currentProduct.imageForStart).appendTo($cartCard);
+      $("<img>").attr("src", currentProduct.imageForStart).appendTo(cartCard);
     } else {
-      $("<img>").attr("src", currentProduct.image).appendTo($cartCard);
+      $("<img>").attr("src", currentProduct.image).appendTo(cartCard);
     }
 
     $("<span>")
       .attr("id", "cartProductName")
       .html(currentProduct.name + " ")
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<button>")
       .attr("type", "button")
@@ -62,7 +63,7 @@ function renderCart() {
       .on("click", function () {
         decreaseProducts(currentProduct);
       })
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<input>")
       .attr("type", "text")
@@ -72,7 +73,7 @@ function renderCart() {
           changeInCartValue($(this).val(), currentProduct);
         }
       })
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<button>")
       .attr("type", "button")
@@ -80,11 +81,11 @@ function renderCart() {
       .on("click", function () {
         increaseProducts(currentProduct);
       })
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<span>")
       .html("$" + currentProduct.price)
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<span>")
       .html("<i class='fas fa-trash'></i>")
@@ -92,24 +93,23 @@ function renderCart() {
         remove(currentProduct);
         $(e.target).parent().remove();
       })
-      .appendTo($cartCard);
-    $cartCard.appendTo($("#cart"));
+      .appendTo(cartCard);
+    cartCard.appendTo($("#cart"));
   }
-
   showTotalPrice();
   calcProducts();
 }
-
+// creates total price html in shopping cart
 function showTotalPrice() {
-  $totalPrice = $("<div>");
-  $totalPrice.addClass("totalprice");
+  let totalPrice = $("<div>");
+  totalPrice.addClass("totalprice");
 
-  $("<p>").html("Total: ").appendTo($totalPrice);
-  $totalPrice.appendTo("#cart");
+  $("<p>").html("Total: ").appendTo(totalPrice);
+  totalPrice.appendTo("#cart");
 
   $("<span>")
     .html("$" + calcTotal())
-    .appendTo($totalPrice);
+    .appendTo(totalPrice);
 
   $("<button>")
     .attr("type", "button")
@@ -125,6 +125,7 @@ function showTotalPrice() {
     .appendTo("#cart");
 }
 
+// Calculate the total cost
 function calcTotal() {
   let totalCost = 0;
 
@@ -133,6 +134,7 @@ function calcTotal() {
   }
   return totalCost;
 }
+// Calculates the total quanity of products in the shopping cart.
 function calcProducts() {
   let totalProducts = 0;
 
@@ -157,7 +159,7 @@ function remove(product) {
 function saveToLS() {
   localStorage.setItem("cartItems", JSON.stringify(cart));
 }
-
+// Decrease product totals in shopping cart.
 function decreaseProducts(currentProduct) {
   currentProduct.inCart--;
   saveToLS();
@@ -169,14 +171,14 @@ function decreaseProducts(currentProduct) {
     checkoutRender();
   }
 }
-
+// Increase product totals in shopping cart.
 function increaseProducts(currentProduct) {
   currentProduct.inCart++;
   saveToLS();
   renderCart();
   checkoutRender();
 }
-
+// Change manual input of product totals.
 function changeInCartValue(inputValue, currentProduct) {
   currentProduct.inCart = parseInt(inputValue);
   saveToLS();
