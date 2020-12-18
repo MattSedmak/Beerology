@@ -1,6 +1,7 @@
 $(function () {
   renderProduct();
 });
+// Creates product html
 function renderProduct() {
   let productItem = JSON.parse(sessionStorage.getItem("productItem")) || [];
 
@@ -13,13 +14,15 @@ function renderProduct() {
     $("<p>")
       .html("$" + productItem.price)
       .appendTo($("#productInfo"));
-    addProductToCart(productItem);
+
+    renderAddToCartBtn(productItem);
     createTable(productItem);
     descriptionPart(productItem);
   }
 }
 
-function addProductToCart(productItem) {
+// Creates quanity and add to cart button
+function renderAddToCartBtn(productItem) {
   let addToCartDiv = $("#addToCartDiv");
   $("<label>")
     .attr("for", "amountOfBeer")
@@ -39,6 +42,11 @@ function addProductToCart(productItem) {
     .attr("value", "1")
     .attr("id", "amountOfBeer")
     .attr("name", "amountOfBeer")
+    .on("keypress", function (e) {
+      if (e.keyCode === 13 || e.key === 13) {
+        quanitityToCart(productItem);
+      }
+    })
     .appendTo(amount);
   $("<button>")
     .attr("type", "button")
@@ -58,22 +66,24 @@ function addProductToCart(productItem) {
     })
     .appendTo(addToCartDiv);
 }
+//Change product total in cart or adds the product to cart.
 function quanitityToCart(product) {
   let value = parseInt($("#amountOfBeer").val());
-  let x = 0;
+  let isProductInCart = 0;
   for (let i = 0; i < cart.length; i++) {
     if (product.id === cart[i].id) {
       cart[i].inCart += value;
-      x++;
+      isProductInCart++;
     }
   }
-  if (x == 0) {
+  if (isProductInCart == 0) {
     product.inCart = value;
     cart.push(product);
   }
   saveToLS();
   renderCart();
 }
+
 function createTable(productItem) {
   let infoDiv = $("#infoTable");
   let table = $("<table>");

@@ -2,7 +2,7 @@ $(function () {
   // Hambuger toggle
   $(".menu-btn").on("click", function () {
     $(".menu-btn").toggleClass("active");
-    $(".menu-panel").toggle("fade").toggleClass("expand");
+    $(".menu-panel").toggleClass("expand");
   });
 
   // Shopping cart toggle
@@ -10,32 +10,32 @@ $(function () {
     $("#cart").toggle("drop right");
   });
   $(".headerText").hide().fadeIn(2000);
-  // Loopar genom cart on load
-  $.each(cart, (i, cartItm) => {
-    renderCart();
-  });
+  $(".btn-container").hide().fadeIn(2000);
+
+  renderCart();
 });
 
 let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+// Adds a product to the shopping cart
 function addToCart(product) {
-  let x = 0;
+  let isProductInCart = 0;
 
   for (let i = 0; i < cart.length; i++) {
     if (product.id === cart[i].id) {
       cart[i].inCart++;
-      x++;
+      isProductInCart++;
     }
   }
-
-  if (x == 0) {
+  if (isProductInCart == 0) {
     product.inCart++;
     cart.push(product);
   }
-
   saveToLS();
   renderCart();
 }
+
+// Creates shopping cart html
 function renderCart() {
   $("#cart").html(" ");
 
@@ -43,19 +43,19 @@ function renderCart() {
 
   for (let i = 0; i < cart.length; i++) {
     let currentProduct = cart[i];
-    $cartCard = $("<div>");
-    $cartCard.addClass("cartCard");
+    cartCard = $("<div>");
+    cartCard.addClass("cartCard");
 
     if (window.location.href.indexOf("index.html") > -1) {
-      $("<img>").attr("src", currentProduct.imageForStart).appendTo($cartCard);
+      $("<img>").attr("src", currentProduct.imageForStart).appendTo(cartCard);
     } else {
-      $("<img>").attr("src", currentProduct.image).appendTo($cartCard);
+      $("<img>").attr("src", currentProduct.image).appendTo(cartCard);
     }
 
     $("<span>")
       .attr("id", "cartProductName")
       .html(currentProduct.name + " ")
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<button>")
       .attr("type", "button")
@@ -63,7 +63,7 @@ function renderCart() {
       .on("click", function () {
         decreaseProducts(currentProduct);
       })
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<input>")
       .attr("type", "text")
@@ -73,7 +73,7 @@ function renderCart() {
           changeInCartValue($(this).val(), currentProduct);
         }
       })
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<button>")
       .attr("type", "button")
@@ -81,11 +81,11 @@ function renderCart() {
       .on("click", function () {
         increaseProducts(currentProduct);
       })
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<span>")
       .html("$" + currentProduct.price)
-      .appendTo($cartCard);
+      .appendTo(cartCard);
 
     $("<span>")
       .html("<i class='fas fa-trash'></i>")
@@ -93,24 +93,23 @@ function renderCart() {
         remove(currentProduct);
         $(e.target).parent().remove();
       })
-      .appendTo($cartCard);
-    $cartCard.appendTo($("#cart"));
+      .appendTo(cartCard);
+    cartCard.appendTo($("#cart"));
   }
-
   showTotalPrice();
   calcProducts();
 }
-
+// creates total price html in shopping cart
 function showTotalPrice() {
-  $totalPrice = $("<div>");
-  $totalPrice.addClass("totalprice");
+  let totalPrice = $("<div>");
+  totalPrice.addClass("totalprice");
 
-  $("<p>").html("Total: ").appendTo($totalPrice);
-  $totalPrice.appendTo("#cart");
+  $("<p>").html("Total: ").appendTo(totalPrice);
+  totalPrice.appendTo("#cart");
 
   $("<span>")
     .html("$" + calcTotal())
-    .appendTo($totalPrice);
+    .appendTo(totalPrice);
 
   $("<button>")
     .attr("type", "button")
@@ -126,6 +125,7 @@ function showTotalPrice() {
     .appendTo("#cart");
 }
 
+// Calculate the total cost
 function calcTotal() {
   let totalCost = 0;
 
@@ -134,6 +134,7 @@ function calcTotal() {
   }
   return totalCost;
 }
+// Calculates the total quanity of products in the shopping cart.
 function calcProducts() {
   let totalProducts = 0;
 
@@ -158,7 +159,7 @@ function remove(product) {
 function saveToLS() {
   localStorage.setItem("cartItems", JSON.stringify(cart));
 }
-
+// Decrease product totals in shopping cart.
 function decreaseProducts(currentProduct) {
   currentProduct.inCart--;
   saveToLS();
@@ -170,16 +171,16 @@ function decreaseProducts(currentProduct) {
     checkoutRender();
   }
 }
-
+// Increase product totals in shopping cart.
 function increaseProducts(currentProduct) {
   currentProduct.inCart++;
   saveToLS();
   renderCart();
   checkoutRender();
 }
-
+// Change manual input of product totals.
 function changeInCartValue(inputValue, currentProduct) {
-  currentProduct.inCart = inputValue;
+  currentProduct.inCart = parseInt(inputValue);
   saveToLS();
   renderCart();
   checkoutRender();

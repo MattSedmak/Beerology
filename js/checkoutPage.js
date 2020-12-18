@@ -1,16 +1,14 @@
 $(function () {
+  $("<h2>").html("Checkout").appendTo($(".checkoutPage"));
   checkoutRender();
   customerForm();
 });
 
+// Creates the chcekout html with products.
 function checkoutRender() {
-  $("<h2>").html("Checkout").appendTo($(".checkoutPage"));
-  
-  let cartContainer = $(".cartContainer");
-  cartContainer.html("");
+  let checkoutContainer = $(".checkoutContainer");
+  checkoutContainer.html("");
   let productContainer = $("<div>").addClass("productContainer");
-  let cartTotal = $("<div>").addClass("cartTotal");
-
 
   for (let i = 0; i < cart.length; i++) {
     let productCard = $("<div>").addClass("productCard");
@@ -32,11 +30,6 @@ function checkoutRender() {
     $("<input>")
       .attr("type", "text")
       .attr("value", cart[i].inCart)
-      // .on("keypress", function (e) {
-      //   if (e.keyCode === 13 || e.key === 13) {
-      //     changeInCartValue($(this).val(), cart[i]);
-      //   }
-      // })
       .appendTo(productCard);
 
     $("<button>")
@@ -47,7 +40,9 @@ function checkoutRender() {
       })
       .appendTo(productCard);
 
-    $("<p>").html(cart[i].price).appendTo(productCard);
+    $("<span>")
+      .html("$" + cart[i].price)
+      .appendTo(productCard);
     $("<span>")
       .html("<i class='fas fa-trash'></i>")
       .on("click", function (e) {
@@ -57,52 +52,44 @@ function checkoutRender() {
       .appendTo(productCard);
 
     productCard.appendTo(productContainer);
-    productContainer.appendTo(cartContainer);
+    productContainer.appendTo(checkoutContainer);
   }
-
   $("<hr>").appendTo(productContainer);
 
-  cartTotal.appendTo(cartContainer);
-  $("<p>").html("Total:").appendTo(cartTotal);
-  $("<p>").html(calcProducts()).appendTo(cartTotal);
-  $("<p>")
+  checkoutTotal();
+  saveToLS();
+}
+// Creates the checkout totals section html.
+function checkoutTotal() {
+  let checkoutTotal = $("<div>").addClass("checkoutTotal");
+
+  let table = $("<table>");
+  let tableRow1 = $("<tr>");
+  $("<th>").html("").appendTo(tableRow1);
+  $("<th>").html("Quantity").appendTo(tableRow1);
+  $("<th>").html("Price").appendTo(tableRow1);
+  let tableRow2 = $("<tr>");
+  $("<td>").html("Total:").appendTo(tableRow2);
+  $("<td>").html(calcProducts()).appendTo(tableRow2);
+  $("<td>")
     .html("$" + calcTotal())
-    .appendTo(cartTotal);
+    .appendTo(tableRow2);
+  tableRow1.appendTo(table);
+  tableRow2.appendTo(table);
+  table.appendTo(checkoutTotal);
+
+  checkoutTotal.appendTo($(".checkoutContainer"));
   saveToLS();
 }
 
+// Sends customer payment information.
 function customerForm() {
-  let formContainer = $(".formContainer");
-  let form = $("<form>");
+  let form = $("form");
   form.on("submit", function (e) {
     e.preventDefault();
     customerToSS($("#fName").val());
     window.location.assign("../HTML/thankYouPage.html");
   });
-
-  $("<label>").attr("for", "fName").html("First Name:").appendTo(form);
-  $("<input>")
-    .attr("type", "text")
-    .attr("id", "fName")
-    .prop("required", true)
-    .appendTo(form);
-
-  $("<label>").attr("for", "lName").html("Last Name:").appendTo(form);
-  $("<input>")
-    .attr("type", "text")
-    .attr("id", "lName")
-    .prop("required", true)
-    .appendTo(form);
-
-  $("<label>").attr("for", "formMail").html("E-mail:").appendTo(form);
-  $("<input>")
-    .attr("type", "email")
-    .attr("id", "formMail")
-    .prop("required", true)
-    .appendTo(form);
-
-  $("<button>").attr("type", "submit").html("Purchase").appendTo(form);
-  form.appendTo(formContainer);
 }
 
 function customerToSS(firstName) {
