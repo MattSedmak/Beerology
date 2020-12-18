@@ -64,7 +64,7 @@ let sour = new Beers(
   4,
   "../Pictures/sourMonkey.png",
   "Pictures/sourMonkey.png",
-  "SourMonkey",
+  "Sour Monkey",
   "Sour Beer",
   "33cl",
   "3,5%",
