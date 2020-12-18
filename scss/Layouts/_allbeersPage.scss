@@ -39,9 +39,9 @@
     @include desktops {
       max-width: 22%;
     }
-    padding: 20px 10px;
+    padding: $gutter-default $gutter-sm;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(127, 127, 127, 0.1);
-    margin: 10px;
+    margin: $margin-med;
     img {
       width: 100%;
       @include desktops {
@@ -55,11 +55,11 @@
     }
 
     p:first-of-type {
-      padding-bottom: 10px;
+      padding-bottom: $gutter-sm;
       font-size: 14px;
       @include desktops {
         font-size: 20px;
-        padding-bottom: 20px;
+        padding-bottom: $gutter-default;
       }
 
       text-align: center;

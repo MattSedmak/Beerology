@@ -1,5 +1,4 @@
-/******* Importera alla scss filer.********** I
-******** Ingen Kod ska skrivas här.**********/
+/******* Importera alla scss filer.**********/
 
 // Import all layouts.
 @import "./Layouts/allbeersPage";
@@ -12,7 +11,6 @@
 @import "./Layouts/thankYouPage";
 
 // Import Tools
-@import "./Tools/extends";
 @import "./Tools/mixins";
 @import "./Tools/variables";
 @import "./Tools/resets";

@@ -3,10 +3,10 @@
 
 //Buttons
 @mixin buttons {
-  background-color: #f7d36e;
+  background-color: $background-color;
   border: 1px solid #f5b301;
   border-radius: 20px;
-  color: black;
+  color: $main-font-color;
   text-align: center;
   cursor: pointer;
   display: inline-block;
